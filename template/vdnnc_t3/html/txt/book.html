@@ -1,0 +1,23 @@
+							<div class="course-block col-lg-4 col-md-6 col-sm-12">
+								<div class="inner-box">
+									<div class="image">
+										<a href="{:mac_url_vod_detail($vo)}"><img src="{:mac_url_img($vo.vod_pic)}" alt="" /></a>
+										<div class="time">{$vo.vod_time|date='m-d H:i',###}</div>
+									</div>
+									<div class="lower-content">
+										<h6><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></h6>
+										<ul class="post-meta">
+											<li>{$vo.vod_director}</li>
+											<li>{$vo.type.type_name}</li>
+										</ul>
+										<div class="clearfix">
+											<div class="pull-left">
+												<div class="author">更新: <span>{$vo.vod_remarks}</span></div>
+											</div>
+											<div class="pull-right">
+												<div class="price"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>

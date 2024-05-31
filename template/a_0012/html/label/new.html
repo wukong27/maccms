@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+{php}$label_name='new';{/php}
+{include file="block/seo"}
+{include file="block/include"}
+</head>
+<body>
+{include file="block/head"}
+<div class="container">
+  <div class="layout-box clearfix gap">
+    <div class="index-ranking gap">
+      <h2>最近更新</h2>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <ul class="ranking-list">
+          {maccms:vod num="50" by="time" order="desc"}
+          <li class="ranking-item">{include file="block/vod_item_ranking"}</li>
+          {/maccms:vod}
+        </ul>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <ul class="ranking-list">
+          {maccms:vod num="100" by="time" order="desc"}
+          {if $key gt 50}
+          <li class="ranking-item new-item">{include file="block/vod_item_ranking"}</li>
+          {/if}
+          {/maccms:vod}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{include file="block/foot"}
+</body>
+</html>

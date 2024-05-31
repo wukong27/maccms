@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+ <head>
+     <title>{$obj.type_name}数据列表-第{$param.page}页-{$maccms.site_name}</title>
+     <meta name="keywords" content="{$obj.type_name}数据列表-第{$param.page}页-{$maccms.site_name}" />
+     <meta name="description" content="{$obj.type_name}数据列表-第{$param.page}页-{$maccms.site_name}" />
+     {include file="public/include"}
+     <style type="text/css">
+	.fenye{
+		margin-top: 5px;
+	}
+</style>
+ </head>
+ <body>
+{include file="public/nav"}     
+<div class="content">
+	<div class="container">
+	{include file="public/head"}
+
+	<div class="appel">
+  	<div class="breadcrumbs">您的位置：<a href="{$maccms.path}">首页</a><em class="sep">></em><a
+  			href="{$obj.type_url}">{$obj.type_name}</a></div>
+    	<div class="appel-heading clearfix">
+		<h3 class="appel-title">{$obj.type_name}<small>第<span class="text-primary">{$param.page}</span>页</small></h3>
+	</div>
+		<div class="appel-max"> 
+		<ul class="thumbnail-group clearfix">
+			{maccms:vod num="24" type="current" order="desc" by="time" paging="yes" pageurl="vod/type"}
+		{include file="public/vodbox"}
+		{/maccms:vod}	
+		</ul>
+	</div>
+	{include file="public/paging"}
+  </div>
+	</div>
+</div>
+{include file="public/foot"}
+ </body>
+</html>

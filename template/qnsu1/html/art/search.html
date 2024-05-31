@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TXT小说搜索{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class} - txt电子书 - 全本乡村艳情小说 - TXT下载站 - TXT2020 - 万书网 - 无限小说网 - 奇书网- 啃书网 - {$maccms.site_name}</title>
+        <meta name="keywords" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}小说,{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}[TXT小说下载],txt电子书,全本乡村艳情小说,TXT下载站,TXT2020,万书网,无限小说网,奇书网,啃书网" />
+		<meta name="description" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}小说,{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}[TXT小说下载]" />
+        {include file="public/include"}
+    </head>  
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->  
+
+        <!--Main Wrapper Start-->
+        <div class="as-mainwrapper">
+            <!--Bg White Start-->
+            <div class="bg-white">
+               {include file="public/head"}
+               
+                <div class="breadcrumb-banner-area pt-150 bg-3 bg-opacity-black-60">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="breadcrumb-text">
+                                    <h2 class="text-center text-white uppercase mb-17">以搜索到《{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}》的小说</h2>
+                                    <div class="breadcrumb-bar">
+                                        <ul class="breadcrumb text-center m-0">
+                                            <li class="text-white uppercase ml-15 mr-15"><a href="/">Home</a></li>
+                                            <li class="text-white uppercase ml-15 mr-15">So</li>
+                                        </ul>
+                                    </div>
+                                </div>                                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of Breadcrumb Banner Area-->
+                <!--Start of Job Post Area-->
+                <div class="job-post-area ptb-120">
+                    <div class="container">
+					
+					<div class="single-sidebar-widget mb-48">
+                                    <div class="section-title text-center ">
+                                    <h2 class="uppercase">搜索引擎</h2>
+                                    <br><br>
+                                </div>
+                                    <div class="search-container">
+                                        <form action="{:mac_url('vod/search')}" method="post">
+                                            <input name="wd" type="text" placeholder="请输入小说名或作者..."/>
+                                        </form>                               
+                                    </div> 
+                                </div>
+					
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="section-title text-center ">
+                                    <h2 class="uppercase">搜索结果</h2>
+                                    <div class="separator mt-35 mb-77">
+                                        <span><img src="images/icons/1.png" alt=""></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="job-post-container fix">
+                                    
+									{maccms:vod num="160" paging="yes" pageurl="vod/search" order="desc" by="time"}
+                                    <div class="single-job-post fix">
+                                        <div class="job-title col-4 pl-30">
+                                            <span class="pull-left block mtb-17">
+                                                <a href="{:mac_url_vod_detail($vo)}"></a>
+                                            </span>
+                                            <div class="fix pl-30 mt-29">
+                                                <h4 class="mb-5">{$vo.vod_name}</h4>
+                                                <h5><a>{$vo.vod_director} [著]</a></h5>
+                                            </div>
+                                        </div>
+                                        <div class="address col-4 pl-50">
+                                            <span class="mtb-30 block">{empty name="vo.vod_remarks"}{$vo.vod_serial}{else /}{$vo.vod_remarks}{/empty},<br>
+                                           </span>
+                                        </div>
+                                        <div class="time-payment col-2 pl-60 text-center pt-22">
+                                            <span class="block mb-6">￥ 0.00</span>
+                                            <a href="{:mac_url_vod_detail($vo)}" class="button button-dark-blue">免费下载</a>
+                                        </div>
+                                    </div>
+                                    {/maccms:vod}
+									
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {include file="public/paging"}
+                <br><br><br>
+				{include file="public/footer"}
+        
+    </body>
+</html>

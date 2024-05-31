@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>{$obj.vod_name}详情介绍-{$obj.vod_name}在线阅读-{$obj.vod_name}TXT下载 - {$maccms.site_name}</title>
+    <meta name="keywords" content="{$obj.vod_name}在线阅读,{$obj.vod_name}TXT下载" />
+    <meta name="description" content="{$obj.vod_name}剧情:{$obj.vod_blurb}" />
+	{include file="p/ina"}
+</head>
+
+<body class="">
+
+<div class="page-wrapper">
+ 	
+    <!-- Preloader -->
+    <div class="preloader"></div>
+ 	
+    <!-- Main Header-->
+    <header class="main-header">
+{include file="p/h"}	
+    </header>
+    <!--End Main Header -->
+	
+	<!-- Course Detail Section -->
+    <div class="course-detail-section">
+    	<div class="auto-container">
+			<div class="upper-content">
+				<div class="row clearfix">
+					
+					<!-- Left Column -->
+					<div class="left-column col-lg-4 col-md-12 col-sm-12">
+						<div class="inner-column">
+							<!-- Video Box -->
+							<div class="intro-video" style="background-image: url({:mac_url_img($obj.vod_pic)})">
+								<a href="{:mac_url_vod_play($obj,['sid'=>1,'nid'=>1])}" ><span class="fa fa-play"></span></a>
+								<h4></h4>
+							</div>同类推荐：
+							{maccms:vod num="4" type="current" order="desc" by="time"}
+						<a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a>、
+							{/maccms:vod}
+						</div>
+					</div>
+					
+					<!-- Right Column -->
+					<div class="right-column col-lg-8 col-md-12 col-sm-12">
+						<div class="inner-column">
+							<h2>{$obj.vod_name}</h2>
+							<div class="sub-text">{$obj.vod_name}详情介绍-{$obj.vod_name}在线阅读-{$obj.vod_name}TXT下载</div>
+							<div class="rating"><span class="rate">{$obj.vod_score} <i class="fa fa-star"></i></span><span class="total-rating">{$obj.vod_director|mac_url_create='director'} 著</span></div>
+							<div class="price">文本类型: <span>{$obj.type.type_name}</span></div>
+							<div class="text">{$obj.vod_blurb}…</div>
+							<div class="buttons-box">
+								<a href="#play" class="theme-btn btn-style-two"><span class="txt">在线阅读</span></a>
+								<a href="#lxxz" class="theme-btn btn-style-one"><span class="txt">离线缓存</span></a>
+                              <a href="javascript:void(0);" style="cursor:hand" class="mac_ulog" data-type="2" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}"><span class="txt">我要收藏</span></a>
+							</div>
+						</div>
+					</div>
+					<a name="play"></a>
+				</div>
+				
+				<!-- Course Detail Info Boxed -->
+				<div class="course-detail-info-boxed">
+					<div class="clearfix">
+						<div class="pull-left">
+							<div class="author">
+								<div class="user-image"><img src="{:mac_url_img($obj.vod_pic)}" alt="" /></div>阅读线路:
+							</div>
+							<!-- Follow -->
+							<div class="follow">{maccms:foreach name="obj.vod_play_list" id="vo" key="key"}<a href="#{$vo.player_info.from}">{$vo.player_info.show}</a>&nbsp;{/maccms:foreach}</div>
+						</div>
+						<!--<div class="pull-right">
+							<ul class="social-box">
+								<li class="share">功能</li>
+								<li class="facebook"><a href="#">收藏</a></li>
+								<li class="google"><a href="#" >2</a></li>
+								<li class="twitter"><a href="#" class="fa fa-twitter"></a></li>
+							</ul>
+						</div>-->
+					</div>
+				</div>
+				<!-- End Course Detail Info Boxed -->
+				
+			</div>
+			
+			<!-- Lower Content -->
+			<div class="lower-content">
+				
+				<!-- Instructor Info Tabs-->
+				<div class="instructor-info-tabs">
+					<!-- Instructor Tabs-->
+					<div class="instructor-tabs tabs-box">
+						
+						<!-- Tab Btns -->
+						<ul class="tab-btns tab-buttons clearfix">
+							<li data-tab="#prod-about" class="active-btn tab-btn">目录表</li>
+							<li data-tab="#prod-course" class="tab-btn">介绍</li>
+							
+						</ul>
+						
+						<!-- Tabs Container -->
+						<div class="tabs-content">
+							
+							<!-- Tab / Active Tab -->
+							<div class="tab active-tab" id="prod-about">
+								<div class="content">
+									
+									<div class="text">
+									{maccms:foreach name="obj.vod_play_list" id="vo" key="key"}	
+										<h6><a name="{$vo.player_info.from}"></a>{$vo.player_info.show}-在线目录</h6>
+										<ul class="list-style-one">
+										{maccms:foreach name="vo.urls" id="vo2" key="key2"}
+										<li><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}" target="{$vo.player_info.target}" >{$vo2.name}</a></li>
+										{/maccms:foreach}
+										</ul>
+									{/maccms:foreach}	
+									</div><a name="lxxz"></a>
+									<ul class="list-style-one">
+									<br><hr><br>
+									{maccms:foreach name="obj.vod_down_list" id="vo" key="key"}
+									<h6>{$vo.player_info.show}下载</h6>
+										
+										{maccms:foreach name="vo.urls" id="vo2" key="key2"}
+										<li><a href="{$vo2.url}"  >{$vo2.name}</a></li>
+										{/maccms:foreach}
+										{/maccms:foreach}
+									</ul>
+								</div>
+							</div>
+							
+							<!-- Tab  -->
+							<div class="tab" id="prod-course">
+								<div class="content">
+									<h6>{$obj.vod_name}的详情介绍</h6>
+									<div class="text">
+										<p>《{$obj.vod_name}》作者{$obj.vod_director|mac_url_create='director'}，本书上架于{$obj.vod_year|mac_url_create='year'}，本站更新于{$obj.vod_time|date='Y-m-d',###}，主要讲述{$obj.vod_content}…</p>
+									</div>
+								</div>
+							</div>
+							
+							
+							
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	<!-- End Instructor Page Section -->
+	
+	<!-- Main Footer -->
+    <footer class="main-footer">
+	{include file="p/fa"}
+	</footer>
+	
+</div>
+<!-- End pagewrapper -->
+
+<!-- Sidebar Nav -->
+<div class="sidenav-list">
+	<ul class="navbar">
+	{include file="p/ha"}
+	</ul>
+</div>
+<!-- End Sidebar Nav -->
+
+<!-- Hidden Navigation Bar -->
+<section class="hidden-bar left-align">
+	<div class="color-layer"></div>
+	<div class="hidden-bar-closer">
+		<span class="flaticon-multiply"></span>
+	</div>
+	<!-- Hidden Bar Wrapper -->
+	<div class="hidden-bar-wrapper">
+	{include file="p/hb"}
+	</div>
+	<!--Copyright Text-->
+	
+</section>
+
+<!--Scroll to top-->
+{include file="p/inb"}
+
+</body>
+</html>

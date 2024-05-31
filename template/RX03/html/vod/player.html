@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>{$obj.vod_name}直播间</title>
+<meta name="description" content="{$obj.vod_name} - 直播间在线观看 - {$maccms.site_name}" /> 
+<meta name="keywords" content="{$obj.vod_name} - 直播间在线观看 - {$maccms.site_name}" /> 
+    <style>*{word-wrap:break-word;outline:none} html,body{width:100%;height:100%;background:#000;color:#fff;}
+    .player_popeom{ width:100%;height:150px; position:absolute;text-align:center; top:50%;margin:-75px 0; }
+    .player_popeom a{  padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.3333333;
+        border-radius: 6px; color: #fff;  background-color: #5cb85c;  border-color: #4cae4c;  }
+
+
+.function {
+	width: 50px;
+	position: absolute;
+	right: 0.05rem;
+	bottom: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 997;
+}
+
+
+.function .guanzhu {
+	margin-bottom: 0.18rem;
+	position: relative;
+}
+
+.function .dianzan {
+	margin-bottom: 0.15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.function .xiaoxi {
+	margin-bottom: 0.15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.function .guanzhu .guanzhu_btn {
+	position: absolute;
+	bottom: 0;
+	font-size: 12px;
+	transform: scale(0.5);
+	width: 0.4rem;
+	left: -0.07rem;
+	text-align: center;
+	background: #26bbff;
+	color: #fff;
+	border-radius: 0.2rem;
+
+}
+
+.function .guanzhu .guanzhuBtn_active {
+	position: absolute;
+	bottom: 0;
+	font-size: 12px;
+	transform: scale(0.5);
+	width: 0.4rem;
+	left: -0.076rem;
+	text-align: center;
+	background: #999;
+	color: #fff;
+	border-radius: 0.2rem;
+	display: none;
+
+}
+
+.function .guanzhu .guanzhu_number {
+	position: absolute;
+	bottom: -0.11rem;
+	font-size: 12px;
+	transform: scale(0.6);
+	width: 0.4rem;
+	left: -0.07rem;
+	text-align: center;
+	color: #fff;
+
+}
+
+.dianzan_number,
+.xiaoxi_number {
+	font-size: 12px;
+	transform: scale(0.6);
+	width: 0.4rem;
+	left: -0.076rem;
+	text-align: center;
+	color: #fff;
+}
+
+.function .guanzhu img,
+/* .function .dianzan img, */
+.function .xiaoxi img,
+.function .zhuanfa img {
+	width: 25px;
+	height: 25px;
+}
+
+.function .dianzan #hongxin {
+	width: 25px;
+	height: 25px;
+}
+
+
+
+		
+		
+.app{ width: 100%; 
+    height:100%; 
+   
+    top:0px; 
+    right:0px; 
+    bottom: 0px; 
+    left:0px; 
+    z-index: -9;}
+		
+.ts-bottom-fix {font-family:'Microsoft YaHei';
+  	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	z-index: 99999;
+}
+
+.ts-bottom-fix {
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+background-color: rgba(255, 250, 250, 0.4);
+	
+}
+
+
+.ts-bottom-fix .ts-inner-wrap {border-top:1px solid #fff;font-size:12px;height:14.3em;width:100%;margin:0 auto;}
+.ts-bottom-fix ul {position:relative;height:100%;}
+.ts-bottom-fix ul li {float:left;text-align:center;font-size:1.125em;width:20%;height:100%;}
+.ts-bottom-fix ul li a {display:block;width:100%;height:100%;}
+.ts-bottom-fix ul li i {display:block;}
+.ts-bottom-fix ul li.normal {margin:0em auto;width:20%;}
+.ts-bottom-fix ul li.normal i {width:2em;height:1.5em;margin:0.5em auto 0.2em;position:relative;font-style:normal;}
+.ts-bottom-fix ul li.normal i b {display:block;width:1em;height:1em;text-align:center;line-height:1em;font-weight:normal;color:#fff;font-size:0.8em;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;position:absolute;top:-0.2em;right:-0.3em;}
+
+.ts-bottom-fix ul li.normal i.ind {background:url(../php-asp/img/foot_icon1.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal i.show {background:url(../php-asp/img/foot_icon2.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal i.Fphp-asp {background:url(../php-asp/img/foot_icon3.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal i.shop {background:url(../php-asp/img/foot_icon4.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal i.php-asp5 {background:url(../php-asp/img/foot_icon5.png) center center no-repeat;background-size:1.9em auto;}
+
+.ts-bottom-fix ul li.normal span {color:#fff;font-style:normal;}
+.ts-bottom-fix ul li.normal a.cur span,.ts-bottom-fix ul li.normal a:hover span {color:#e30a10;}	
+		
+.ts-bottom-fix ul li.normal a.cur i.ind,.ts-bottom-fix ul li.normal a:hover i.ind 
+{background:url(../php-asp/img/foot_hicon1.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal a.cur i.show,.ts-bottom-fix ul li.normal a:hover i.show 
+{background:url(../php-asp/img/foot_hicon2.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal a.cur i.Fphp-asp,.ts-bottom-fix ul li.normal a:hover i.Fphp-asp 
+{background:url(../php-asp/img/foot_hicon3.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal a.cur i.shop,.ts-bottom-fix ul li.normal a:hover i.shop 
+{background:url(../php-asp/img/foot_hicon4.png) center center no-repeat;background-size:1.9em auto;}
+
+.ts-bottom-fix ul li.normal a.cur i.php-asp5,.ts-bottom-fix ul li.normal a:hover i.php-asp5 
+{background:url(../php-asp/img/foot_hicon5.png) center center no-repeat;background-size:1.9em auto;}
+
+.ts-bottom-fix ul li.normal:hover {background:#212121;}	
+		
+    </style>
+    <script src="{$maccms.path}static/js/jquery.js"></script>
+    <script>var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};</script>
+</head>
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+
+<div style="position:absolute;top:70px;left:10px;z-index: 99999;">
+{maccms:vod num="8" type="current" order="desc" by="rnd"}	
+     <a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}"><img style="opacity: 0.9;border-radius:70%;border:2px solid #fff;" height="50" width="50" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}"></a><br>{/maccms:vod}
+
+<!--asp-asp.net结束--></div>
+
+
+
+<div class="function">
+						<div class="guanzhu">
+							<img src="./imgs/touxiang.png" alt="">
+							<div class="guanzhu_btn">关注</div>
+							<div class="guanzhuBtn_active">已关注</div>
+							<div class="guanzhu_number">666w</div>
+						</div>
+						<div class="dianzan">
+							<img class="xin" src="./imgs/dianzan.png" alt="">
+							<img class="xin_active" src="./imgs/dianzan1.png" alt="">
+							<div class="dianzan_number">666w</div>
+						</div>
+						<div class="xiaoxi">
+							<img src="./imgs/xiaoxi.png" alt="">
+							<div class="xiaoxi_number">666w</div>
+						</div>
+						<div class="zhuanfa">
+							<img src="./imgs/zhuanfa.png" alt="">
+						</div>
+					</div>
+
+
+
+
+
+
+
+<div class="ts-bottom-fix">
+  <div class="ts-inner-wrap">
+			<div align="center">123  456
+		    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="app">
+
+{$player_data}
+{$player_js} </div>
+{if condition="$popedom.code gt 1"/}  
+ 
+
+
+<div class="player_showtry" style="display:none;">
+    <div class="player_box">
+        <div class="player_popeom">
+            {if condition="$obj.vod_points_play eq 0"}
+            <p>试看{$popedom.trysee}分钟结束，完整观看本影片需要升级会员组，请升级后观看。</p>
+            <p><small>提示：购买VIP会员组，享受超级权限，谢谢支持。</small></p>
+            <p><a href="{:url('user/index')}" target="_blank">会员中心</a> <a href="{:url('user/upgrade')}" target="_blank">马上升级</a></p>
+            {else/}
+            {if condition="$user.group.group_id eq 1"}
+            <p>试看{$popedom.trysee}分钟结束，完整观看本影片需要花费{$obj.vod_points_play}积分，请支付后观看。</p>
+            <p><small>提示：一次支付，永久观看，不重复扣费，谢谢支持。</small></p>
+                <p><a href="{:url('user/login')}" target="_blank">马上登录</a></p>
+            {else/}
+            {$popedom.msg}
+            <p><small>提示：一次支付，永久观看，不重复扣费，谢谢支持。</small></p>
+                <p><a href="{:url('user/buy')}" target="_blank">马上充值</a> <a href="javascript:;" onclick="window.parent.MAC.User.BuyPopedom(this)" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}" data-mid="1" data-type="{if condition="$obj.player_info.flag eq 'play'"}4{else/}5{/if}">确认购买</a></p>
+            {/if}
+            {/if}
+
+        </div>
+    </div>
+</div>
+<script>
+    //方式一本页面计算
+     window.setTimeout(function(){
+     $('.MacPlayer').html( $('.player_showtry').html() );
+     },1000*60*{$popedom.trysee});
+
+    //方式二调用父页面公共函数库
+    //window.parent.MAC.User.PopedomCallBack({$popedom.trysee},$('.player_showtry').html() );
+</script>
+{/if}
+
+
+</body>
+</html>
+

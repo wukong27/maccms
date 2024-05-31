@@ -1,0 +1,4 @@
+User-agent: *
+Sitemap: /rss/sitemap.html
+Sitemap: /rss/sitemap.xml
+Sitemap: /rss/sitemap.txt

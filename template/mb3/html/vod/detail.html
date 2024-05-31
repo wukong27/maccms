@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+ <head> 
+  <meta name="keywords" content="{$obj.type.type_name}{$obj.vod_name}_{$maccms.site_name}" />
+  <meta name="description" content="{$obj.type.type_name}{$obj.vod_name}_{$maccms.site_name}" />
+  <title>{$obj.vod_name}剧情介绍--{$maccms.site_name}</title>
+{include file="public/include"}
+</head>
+<body>
+{include file="public/nav"}     
+<div class="content">
+	<div class="container">
+	{include file="public/head"}
+	<div class="appel">
+  	<div class="breadcrumbs">您的位置：<a href="{$maccms.path}">首页</a><em class="sep">></em><a
+  			href="{:mac_url_type($obj,[],'type')}">{$obj.type.type_name}</a><em
+  			class="sep">></em><span>{$obj.vod_name}</span></div>
+  	<div class="detail clearfix">
+  		<div class="detail-poster">
+  			<a href="{:mac_url_vod_play($obj)}"><img src="{:mac_url_img($obj.vod_pic)}"
+  					alt="{$obj.vod_name}"></a>
+  		</div>
+  		<div class="detail-info">
+  			<ul class="detail-actor clearfix">
+  				<li>片名：{$obj.vod_name}</li>
+  				<li><label>类型：</label>{$obj.type.type_name}</li>
+  				<li><label>更新：</label>{$obj.vod_time|date='Y-m-d',###}</li>
+  				<li><label>
+  				<!--<font color="#FF0000" size="3">重要说明： </font>
+  				</label>如遇到移动网络无法播放，请使用其他网络进行观看！</li>-->
+  				<li><label>本站地址： </label>{$maccms.site_url}请收藏避免丢失</li>
+  			</ul>
+  		</div>
+  		<div class="detail-source">
+  			<ul class="detail-tab ff-playurl-tab detail-tab-zt clearfix slider-list" id="detail-tab"
+  				>
+  			    {maccms:foreach name="obj.vod_play_list" id="vo"}
+  				<!--<li {if condition="$key eq 1"}class="active"{/if}><a>{$vo.player_info.show}</a></li>-->
+  				<li {if condition="$key eq 1"}class="active"{/if}><a>{$maccms.site_name}</a></li>
+  				{/maccms:foreach}
+  			</ul>
+  			<div class="detail-content tab-content ff-playurl-tab" id="detail-content">
+  			    	{maccms:foreach name="obj.vod_play_list" id="vo" by="sort"}	
+  				<ul class="detail-play-list clearfix tab-pane ff-playurl ff-playurl-tab-1 episode  {if condition="$key eq 1"}active{/if} fade in" >
+  				    {maccms:foreach name="vo.urls" id="vo2" key="key2"}
+  					<li><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}" title="{$vo2.name}">{$vo2.name}</a></li>
+                {/maccms:foreach}
+  				</ul>
+  					 {/maccms:foreach}
+  			</div>
+  		
+  		</div>
+  	</div>
+  </div>
+{include file="vod/like"}
+	</div>
+</div>
+{include file="public/foot"}
+ </body>
+</html>

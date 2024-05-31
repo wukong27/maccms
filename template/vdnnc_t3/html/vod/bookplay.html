@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<title>{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}</title>
+		<script src="/static/js/jquery.js"></script>
+		<script>var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","aid":"{$maccms['aid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};</script>
+		<script src="{$maccms.path}static/js/home.js"></script>
+		</head>
+	<style>
+      body,html{width:100%;height:98%;background:#000;padding:0;margin:0;overflow-x:hidden;overflow-y:hidden}
+      #player{position:absolute;top:0;left:0;width:100%;height:100%;}
+      .b-videobottom {width:100%;height:30px;background:#1D1D1D;position:fixed;text-align:center;left:0;z-index:100;}
+      .b-adicon {font-size:12px;color:#ddd;line-height:30px;margin-left:5px;display:none;}
+      .footer{position:absolute;bottom:0;width:100%;height:20px;}
+    </style> 
+    <body>
+        <span class="mac_history" style="display:none;"></span>
+         <span style="display:none" class="mac_ulog_set" alt="设置文章内容页浏览记录" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.art_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+<span style="display:none" class="mac_ulog_set" alt="设置专题内容页浏览记录" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.topic_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+<span style="display:none" class="mac_ulog_set" alt="设置内容页浏览记录" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+<span style="display:none" class="mac_ulog_set" alt="设置视频播放记录" data-type="4" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+<span style="display:none" class="mac_ulog_set" alt="设置视频播放记录" data-type="5" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+<span style="display:none" class="mac_history_set" alt="设置History历史记录" data-name="[{$obj.type.type_name}]{$obj.vod_name}" data-pic="{$obj.vod_pic|mac_url_img}"></span>
+    
+	<div>
+	{$player_data}{$player_js}
+	</div>
+	<br><div class="footer"><center><a href="{$obj.player_info.link_pre}"><font color="#ddd">上翻页</font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:mac_url_vod_detail($obj)}#play" ><font color="#ddd">返回目录</font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{$obj.player_info.link_next}"><font color="#ddd">下翻页</font></a></center></div>
+	</body>{$maccms.site_tj}</html>

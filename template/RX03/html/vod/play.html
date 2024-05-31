@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> 
+  <title>{$obj.vod_name} - 高清视频在线观看 - {$maccms.site_name}</title> 
+  <meta name="description" content="{$obj.vod_name} - 高清视频在线观看 - {$maccms.site_name}" /> 
+  <meta name="keywords" content="{$obj.vod_name} - 高清视频在线观看 - {$maccms.site_name}" /> 
+  <meta name="author" content="{$maccms.site_name}" /> 
+  <!-- Favicon Icon --> 
+  <link rel="icon" type="image/png" href="{$maccms.path_tpl}html/style/images/favicon.png" /> 
+   <!-- Custom styles for this template--> 
+   <link href="{$maccms.path_tpl}html/style/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="{$maccms.path_tpl}html/php-asp/play.css" rel="stylesheet" /> 
+
+
+  {include file="public/include"}
+
+ </head> 
+ <body id="page-top" class=""> <div class="page unselect2">
+  {include file="public/left"}
+  <div id="wrapper">
+	  
+<div class="ts-wrap">
+
+<div style="width:100%;height:100%;position: relative;" id="a2"> 
+            <div id="a1" allowfullscreen=""> 
+			{$player_data}
+			{$player_js}
+             <script type="text/javascript">
+				function IsPC() {
+					var userAgentInfo = navigator.userAgent;
+					var Agents = ["Android", "iPhone",
+						"SymbianOS", "Windows Phone",
+						"iPad", "iPod"];
+					var flag = true;
+					for (var v = 0; v < Agents.length; v++) {
+						if (userAgentInfo.indexOf(Agents[v]) > 0) {
+							flag = false;
+							break;
+						}
+					}
+					return flag;
+				}
+			 </script> 
+             <script type="text/javascript">
+				//加载时适应浏览器高度
+				$(document).ready(function() {
+					//模块尺寸
+					$('#a1').css('height', $('#a1').width()*0.65);
+					$('#a2').css('height', $('#a2').width()*0.65);
+				})
+				//改变窗体大小时适应浏览器高度
+				$(window).resize(function() {
+					//模块尺寸
+					$('#a1').css('height', $('#a1').width()*0.65);
+					$('#a2').css('height', $('#a2').width()*0.65);
+				});
+			 </script> 
+            </div> </div>
+		   <!-- 视频结束php-asp.net -->
+
+
+<div class="single-video-title box mb-3"> 
+          <h2><a>热门视频</a></h2> 
+          <p class="mb-0">
+{maccms:vod num="18" type="current" order="desc" by="hits"}
+            <a href="{:mac_url_vod_play($vo)}">{$vo.vod_name}</a> ; 
+           {/maccms:vod}</p> 
+         </div>
+
+
+
+{maccms:foreach name="obj.vod_play_list" id="vo" key="key"}
+         <div class="single-video-info-content box mb-3" id="playlist_{$key}"> 
+          <h6>{$obj.vod_name}（{$vo.player_info.show}）专辑列表 :</h6> 
+          <p class="tags mb-0"> 
+		   {maccms:foreach name="vo.urls" id="vo2" key="key2" }
+		   <span class="chapter_{$key}_{$vo2.nid}"><a style="margin-top: 5px;text-align:center" href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></span> 
+		   {/maccms:foreach}
+		   
+		  </p> 
+         </div>
+		 <style>.tags .chapter_more_{$key}{display: none;}</style>
+         <script>
+			$("span.chapter_{$key}_36").nextAll().addClass("chapter_more_{$key}");
+			$(".tags span:last").removeClass("chapter_more_{$key}");
+			$("#chapter_more_button_{$key}").click(function () {
+				if($(".chapter_more_{$key}").is(":hidden")){
+					$(".chapter_more_{$key}").show()
+					$(this).html('隐藏')
+				}else{
+					$(".chapter_more_{$key}").hide()
+					$(this).html('展开')
+				}
+			});
+		 </script>		 
+		 {/maccms:foreach}
+
+</div>
+
+
+
+<div class="ts-wrap">	<div class="UStop"  data-move-y="-30px"><h5>猜你喜欢</h5><span>{$maccms.site_name}</span></div>   
+<ul class="wall">
+		
+{maccms:vod num="8" type="current" order="desc" by="rnd"}		
+		 <li class="article"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}">
+				<img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}">
+				<p style="font-size: 12px;">{$vo.vod_name}<br> {$vo.vod_hits} 次观看</p><div id="radius"><img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}"></div></a>
+				<span rowspan="2" class="statusIco zbz2" style="font-size: 12px;">{$vo.type.type_name}</span></li> {/maccms:vod}	
+				
+
+				
+	</ul>
+  </div>
+
+
+
+
+
+
+
+
+
+	<script src="{$maccms.path_tpl}html/php-asp/jaliswall.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.wall').jaliswall({ item: '.article' });
+	});
+</script>
+
+
+ {include file="public/foot"}</div>
+  <!-- /#wrapper --> 
+ </div>
+  
+  
+  
+
+ </body>
+</html>

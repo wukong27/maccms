@@ -1,0 +1,104 @@
+﻿
+/* Video Page */
+ .box{
+     padding: 15px;
+     background: #fff none repeat scroll 0 0;
+     border-radius: 2px;
+     box-shadow: 0 0 11px #ececec;
+     transition-duration: 0.4s;
+}
+ .single-video-title h2 {
+     font-size: 18px;
+}
+ .single-video-title h2 a {
+     color: #333;
+}
+ .single-video-author img {
+     border-radius: 50px;
+     float: left;
+     height: 38px;
+     margin: 0 13px 0 0;
+     width: 38px;
+}
+ .single-video-author p {
+     margin: 0;
+     padding: 0;
+}
+ .single-video-info-content h6 {
+     font-size: 15px;
+     font-weight: 600;
+}
+ .tags span a {
+     background: #ccc none repeat scroll 0 0;
+     border-radius: 2px;
+     color: #fff;
+     display: inline-block;
+     padding: 4px 9px;
+}
+ .tags span a:hover {
+     background: #000 none repeat scroll 0 0;
+}
+/* Footer */
+ .app img {
+     background: #231f20 none repeat scroll 0 0;
+     border-radius: 3px;
+     height: 38px;
+     margin: 5px 0 0;
+     object-fit: scale-down;
+     padding: 3px 4px;
+}
+/* Mobile Media */
+/* Extra small devices (portrait phones, less than 576px) */
+ @media (max-width: 575.98px) {
+    #wrapper #content-wrapper .container-fluid {
+        padding-bottom: 15px !important;
+
+        padding-right: 15px !important;
+        padding-top: 1rem !important;
+    }
+    .sidebar .nav-item .nav-link {
+        padding: 5px 10px !important;
+    }
+    .sidebar-toggled #wrapper #content-wrapper .container-fluid {
+   
+    }
+    .single-channel-page {
+         padding: 0 0 0 90px !important;
+    }
+    .sidebar-toggled .single-channel-page {
+        padding: 0 !important;
+    }
+    .single-channel-page .container-fluid {
+        padding: 30px 15px 15px !important;
+    }
+
+    .single-video-author .float-right {
+        float: none !important;
+        margin: 0 0 14px;
+    }
+    .single-video-author {
+        text-align: center;
+    }
+    .single-video-author img {
+        float: none;
+        margin: 0 0 5px;
+    }
+
+    .tags span a {
+        margin: 0 0 3px;
+    }
+
+     .sidebar .nav-item .nav-link span {
+         margin: 0 !important;
+    }
+     .sidebar .channel-sidebar-list h6 {
+         font-size: 11px !important;
+    }
+     .sidebar .channel-sidebar-list {
+         display: none;
+    }
+    .sidebar .nav-item .nav-link span {
+         display: block;
+         font-size: 0.65rem;
+    }
+   

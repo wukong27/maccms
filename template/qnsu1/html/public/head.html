@@ -1,0 +1,117 @@
+<header id="sticky-header" class="header-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-12">
+                                <div class="logo"><a href="/"><img src="{$maccms.path_tpl}images/logo/logo.png" alt="JobHelp"></a></div>
+                            </div>
+                            <div class="col-md-9 hidden-sm hidden-xs">
+                                <div class="pull-right">
+                                    <nav id="primary-menu">
+                                        <ul class="main-menu text-right">
+                                        	
+                                            <li><a href="/">首页</a></li>
+                                            
+											
+											<li><a >分类</a>
+                                                <ul class="dropdown">
+                                                    {maccms:type ids="" order="desc" by="sort"}
+                                                    <li><a href="{:mac_url_type($vo)}">{$vo.type_name}</a></li>
+                                                    {/maccms:type}
+                                                </ul>
+											</li>
+											
+										<li><a>排行</a>
+                                                <ul class="dropdown">
+                                                	
+                                                    <li><a>热门小说<i class="zmdi zmdi-chevron-right"></i></a>
+                                                    <ul class="inside-menu">
+                                                    	{maccms:vod num="10" level="1,2,3,4,5,6,7,8,9" order="desc" by="time"}
+                                                            <li><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></li>
+                                                        {/maccms:vod}
+                                                        </ul>
+                                                    </li>
+                                                    
+                                                    <li><a>热门作者<i class="zmdi zmdi-chevron-right"></i></a>
+                                                    <ul class="inside-menu">
+                                                    	{maccms:vod num="10" level="1,2,3,4,5,6,7,8,9" order="desc" by="time"}
+                                                            <li><a href="/so/director/{$vo.vod_director|mac_default='未知'}.html">{$vo.vod_director|mac_default='未知'}</a></li>
+                                                        {/maccms:vod}
+                                                        </ul>
+                                                    </li>
+                                                
+                                                </ul>
+                                        </li>
+											
+											<li><a href="/so.html">搜索</a></li>
+											
+											<li><a >开放平台</a>
+                                                <ul class="dropdown">
+                                                    
+                                                    <li><a href="https://www.vpnpn.com/t51p1.html" target="_blank">模板下载</a></li>
+                                                    <li><a href="https://www.vpnpn.com/v20063p1n1.html" target="_blank">开放采集</a></li>
+                                                    <li><a href="https://www.vpnpn.com/t53p1.html" target="_blank">开发公告</a></li>
+                                                </ul>
+                                                
+											</li>
+                                        </ul>
+                                    </nav>
+                                    <!--<div class="login-btn pt-36">
+                                        <a class="modal-view button" href="#" data-toggle="modal" data-target="#productModal">Login</a>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu Area start -->
+                    <div class="mobile-menu-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="mobile-menu">
+                                        <nav id="dropdown">
+                                            <ul>
+                                            	
+                                                <li><a href="/">小说首页</a></li>
+                                                
+                                                <li><a>热门排行</a>
+                                                    <ul class="sub-menu">
+                                                    	
+                                                        <li><a>热门小说</a>
+                                                            <ul class="sub-menu">
+                                                            	{maccms:vod num="10" level="1,2,3,4,5,6,7,8,9" order="desc" by="time"}
+                                                                <li><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></li>
+                                                                {/maccms:vod}
+                                                            </ul>
+                                                        </li>
+                                                        
+                                                        <li><a>热门作者</a>
+                                                            <ul class="sub-menu">
+                                                            	{maccms:vod num="10" level="1,2,3,4,5,6,7,8,9" order="desc" by="time"}
+                                                                <li><a href="/so/director/{$vo.vod_director|mac_default='未知'}.html">{$vo.vod_director|mac_default='未知'}</a></li>
+                                                                {/maccms:vod}
+                                                            </ul>
+                                                        </li>
+                                                        
+                                                    </ul>
+                                                </li>
+                                                
+												<li><a href="/so.html">小说搜索</a></li>
+												
+                                               	<li><a>小说分类</a>
+                                                    <ul class="sub-menu">
+                                                    {maccms:type ids="" order="desc" by="sort"}    
+                                                        <li><a href="{:mac_url_type($vo)}">{$vo.type_name}</a></li>
+                                                    {/maccms:type}    
+                                                    </ul>
+                                                </li>
+												
+											<li>点+展开</li>	
+                                            </ul>
+                                        </nav>
+                                    </div>                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </header>

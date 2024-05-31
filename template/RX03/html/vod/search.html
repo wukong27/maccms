@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> 
+  <title>热门写真 美女写真视频 - {$maccms.site_name}</title> 
+  <meta name="description" content="{if condition="$param.by eq 'time_add' || $param.by eq 'hits'"}{$maccms.site_description}{else} {$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class} 搜索结果{/if}" /> 
+  <meta name="keywords" content="{if condition="$param.by eq 'time_add' || $param.by eq 'hits'"}{$maccms.site_keywords}{else} {$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class} 搜索结果{/if}" /> 
+  <meta name="author" content="{$maccms.site_name}" /> 
+  <!-- Favicon Icon --> 
+  <link rel="icon" type="image/png" href="{$maccms.path_tpl}html/style/images/favicon.png" /> 
+
+  {include file="public/include"}
+ 
+ </head> 
+ <body id="page-top" class=""><div class="page unselect3">  
+ 
+  {include file="public/head"}
+  <div id="wrapper">   
+   <!-- Sidebar --> 
+
+
+
+<div class="ts-wrap">	<div class="UStop"  data-move-y="-30px"><h5>{if condition="$param.by eq 'time_add'"}最近更新{elseif condition="$param.by eq 'hits'"}最受欢迎{else} {$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class} 搜索结果{/if}</h5><span>{$maccms.site_name}</span></div>   
+<ul class="wall">
+		
+{maccms:vod num="12" paging="yes" pageurl="vod/search" order="desc" by="time"}		
+		 <li class="article"><a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}">
+				<img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}">
+				<p style="font-size: 12px;">{$vo.vod_name}<br> {$vo.vod_hits} 次观看</p><div id="radius"><img src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}"></div></a>
+				<span rowspan="2" class="statusIco zbz2" style="font-size: 12px;">{$vo.type.type_name}</span></li> {/maccms:vod}	
+	</ul>
+  </div> 
+	  
+
+
+
+ 
+	  
+<div class="ts-wrap">	  
+<nav aria-label="Page navigation example"> 
+       <ul class="pagination justify-content-center pagination-sm mb-0"> 
+        {include file="public/paging"} 
+       </ul> 
+      </nav>  </div>
+	  
+	  
+<p class="con"></p>
+<style>
+.con{
+        width: 100%;
+        height: 35px;
+        background-color: rgba(0,0,0,0.8);
+        position: fixed;
+        color: #fff;
+        text-align: center;
+        border-radius: 10px;
+        line-height: 35px;
+        z-index: 999;
+        display: none;
+        font-size: 16px;
+    }
+</style>  
+
+    <!-- /.container-fluid --> 
+	
+	<script src="{$maccms.path_tpl}html/php-asp/jaliswall.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.wall').jaliswall({ item: '.article' });
+	});
+</script>
+ 
+<script>var topdata = "20px";</script>
+<script type="text/javascript" src="{$maccms.path_tpl}html/php-asp/gundong.js"></script>
+ 
+	{include file="public/foot"}
+
+  </div>  
+
+ 
+ 
+ 
+ </div> </body>
+</html>

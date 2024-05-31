@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>《{$obj.vod_name}》下载分发页 </title>
+<meta name="robots" content="noindex,nofllow" />
+<meta name="baidu-deadlink" value="1">
+<link href="{$maccms.path_tpl}/xz/bootstrap.min.css" rel="stylesheet">
+<link href="{$maccms.path_tpl}/xz/bootstrap-theme.min.css" rel="stylesheet">
+<link href="{$maccms.path_tpl}/xz/list.css" rel="stylesheet">
+
+</head>
+<body style="background:url({$maccms.path_tpl}/xz/bg1.jpg) fixed center center no-repeat;width:100%;margin:0 auto; padding:0 5px;">
+
+<!---404-->
+    <div class="ad-1160px" style="color:#fff;text-align:center; margin:30px auto 20px;">
+            <p style="font:bold 50px/45px '微软雅黑';">《{$obj.vod_name}》</p>
+            <p style="font:bold 18px/30px '微软雅黑';">最新章节《{empty name="obj.vod_remarks"}{$obj.vod_serial}{else /}{$obj.vod_remarks}{/empty}》</p>
+            <p style="font:bold 18px/30px '微软雅黑';">更新时间 {$obj.vod_time|mac_friend_date}</p>
+            <p style="font:bold 12px/30px '微软雅黑';">如无法下载请更换其它线路</p>
+    </div>
+<!--//404s--->
+
+<!---m404-->
+    <div class="ad-480px" style="color:#000;text-align:center; margin:10px auto 10px;">
+            <p style="font:bold 14px/40px '微软雅黑';">《{$obj.vod_name}》下载分发地址</p>
+            <p style="font:14px/14px '微软雅黑';">最新章节《{empty name="obj.vod_remarks"}{$obj.vod_serial}{else /}{$obj.vod_remarks}{/empty}》</p>
+            <p style="font:bold 14px/30px '微软雅黑';">更新时间 {$obj.vod_time|mac_friend_date}</p>
+            <p style="font:bold 12px/30px '微软雅黑';">如无法下载请更换其它线路</p>
+    </div>
+<!--//m404s--->
+
+<div class="clear"></div>
+
+<!--广告-->
+<!--//广告-->
+
+<div style="max-width:800px; margin:10px auto 100px; font-size:2em;">
+		{maccms:foreach name="obj.vod_play_list" id="vo"}
+		{maccms:foreach name="vo.urls" id="vo2" key="key2"}
+        <p class="janpn404"><a class="btn btn-lg btn-default btn-block" href="{$vo2.url}" rel="nofollow" target="_blank">{$vo2.name}</a></p>
+		{/maccms:foreach}
+		{/maccms:foreach}	
+        <p class="janpn404"><a class="btn btn-lg btn-primary btn-block" href="/so.html" target="_blank">搜索更多</a></p>
+		{maccms:type ids="" order="desc" by="sort"}
+		<p class="janpn404"><a class="btn btn-lg btn-default btn-block" href="{:mac_url_type($vo)}">{$vo.type_name}</a></p>
+		{/maccms:type}
+</div>
+
+<div class="clear"></div>
+
+<!--广告-->
+<!--//广告-->
+
+<p style="width:150px; text-align:center; margin:0 auto 30px;"><a href="/" class="btn btn-lg btn-primary btn-block" target="_blank" rel="nofollow"> 返回首页 </a></p>
+<center>本站以收录小说{:mac_data_count(0,'all','vod')}K+ {$maccms.site_tj}<br>
+Copyright &copy; 2020 {$maccms.site_url} {$maccms.site_name} 版权所有</center>
+</body>
+</html>

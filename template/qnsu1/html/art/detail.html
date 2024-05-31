@@ -1,0 +1,134 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>《{$obj.vod_name}》 - {$obj.vod_name}小说TXT下载 - {$obj.vod_director}全部小说TXT下载 - TXT小说下载 - {$maccms.site_name} - txt电子书 - 全本乡村艳情小说 - TXT下载站 - TXT2020 - 万书网 - 无限小说网 - 奇书网- 啃书网</title>
+		<meta name="keywords" content="免费小说{$obj.vod_name},{$obj.vod_name}TXT下载,{$obj.vod_director},{$maccms.site_name},txt电子书,全本乡村艳情小说,TXT下载站,TXT2020,万书网,无限小说网,奇书网,啃书网" />
+		<meta name="description" content="欢迎下载小说《{$obj.vod_name}》（{$maccms.site_url}），{$obj.vod_blurb}-----{$obj.vod_director}" />
+        {include file="public/include"}
+        
+    </head>  
+    <body>
+        <div class="as-mainwrapper">
+            <div class="bg-white">
+                {include file="public/head"}
+                <div class="breadcrumb-banner-area pt-94 pb-85 bg-3 bg-opacity-dark-blue-90">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="breadcrumb-text">
+                                    <h2 class="text-center text-white uppercase mb-17">{$obj.vod_name}TXT小说下载</h2>
+                                    <div class="breadcrumb-bar">
+                                        <ul class="breadcrumb text-center m-0">
+                                            <li class="text-white uppercase ml-15 mr-15"><a href="/">Home</a></li>
+                                            <li class="text-white uppercase ml-15 mr-15">TXT下载</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of Breadcrumb Banner Area-->
+                <!--Start of Blog Area-->
+                <div class="blog-area pt-120 pb-120">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="single-blog hover-effect mb-50">
+                                    <div class="blog-image box-hover">
+                                        <a class="block">
+                                            <img src="{:mac_url_img($obj.vod_pic)}" alt="" height="300" width="100%">
+                                        </a>
+                                    </div>
+                                    <div class="blog-text">
+                                        <div class="blog-date pt-12">
+                                            <span class="text-large block text-white">25</span>
+                                            <span class="uppercase block text-white">W+</span>
+                                        </div>
+                                        <div class="blog-post-info">
+                                            <span class="pl-20 l-text"><i class="zmdi zmdi-account pr-8"></i>{$obj.vod_director|mac_url_create='director'}</span>
+                                            <span class="pl-50 l-text"><i class="zmdi zmdi-favorite pr-8"></i>{$obj.type.type_name}</span>
+                                            <span class="pl-15 l-text"><i class="zmdi zmdi-comments pr-8"></i>{empty name="obj.vod_remarks"}{$obj.vod_serial}{else /}{$obj.vod_remarks}{/empty}</span>
+                                        </div>
+                                        <h5 class="pt-42 mb-14 l-text">{$obj.vod_name}</h5>
+                                        <p class="mb-25"><a title="{$maccms.site_name}TXT小说下载"  href="//{$maccms.site_url}">{$maccms.site_name}</a>({$maccms.site_url})提供{$obj.type.type_name|mac_url_create='type_name'}小说《<a href="{:mac_url_vod_detail($obj)}" target="_blank" title="{$obj.vod_name},{$obj.vod_name}TXT免费下载" >{$obj.vod_name}</a>》<a href="/"target=_blank title="{$obj.vod_name},{$obj.vod_name}TXT免费下载" >TXT免费下载</a>，《{$obj.vod_name}》由{$obj.vod_director|mac_url_create='director'}编写，本站{$obj.vod_time_add|date='Y-m-d h:m:s',###}添加本小说,最后更新时间为{$obj.vod_time|date='Y-m-d h:m:s',###}！小说《{$obj.vod_name}》讲述{$obj.vod_blurb}.........{$obj.vod_director|mac_url_create='director'}</p>
+                                    </div>
+                                </div>
+                                <div class="tags-and-links fix pt-14 pb-12">
+                                    <div class="related-tag pull-left">
+                                        <span class="mr-10">Tag:</span>
+                                        <ul class="tags">
+                                            <li>{$obj.vod_tag|mac_url_create='tag'}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="social-links pull-right">
+                                        
+                                    </div>
+                                </div>
+                                <div class="comments fix pt-55">
+                                    <h4 class="title pb-8 mb-27">下载列表</h4>
+                                    
+                                    {maccms:foreach name="obj.vod_play_list" id="vo" key="key"}
+                                    {maccms:foreach name="vo.urls" id="vo2" key="key2"}
+                                    <div class="single-comment fix mb-30">
+                                        <div class="author-image">
+                                            <img alt="" src="{:mac_url_img($obj.vod_pic)}" height="67" width="67">
+                                        </div>
+                                        <div class="comment-text fix">
+                                            <div class="author-info">
+                                                <h4 class="mb-8"><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}" target="_blank">{$vo2.name}</a></h4>
+                                                <span class="reply">{$obj.vod_name}/</span>
+                                                <span class="comment-time">免费/</span>
+                                            </div>
+                                            <p class="mb-18">{$obj.vod_time|mac_friend_date}</p>
+                                        </div>
+                                    </div>
+                                    {/maccms:foreach}
+                                    {/maccms:foreach}
+                                   
+									
+                                </div>
+                            </div><br><br>
+                            <div class="col-md-4">
+                                <div class="single-sidebar-widget mb-48">
+                                    <div class="sidebar-widget-title">
+                                        <h4 class="mb-23">Search</h4>
+                                    </div>
+                                    <div class="search-container">
+                                        <form action="{:mac_url('vod/search')}" method="post">
+                                            <input name="wd" type="text" placeholder="请输入小说名称"/>
+                                        </form>                               
+                                    </div> 
+                                </div>
+                                <div class="single-sidebar-widget mb-48">
+                                    <div class="sidebar-widget-title">
+                                        <h4 class="mb-23">分类</h4>
+                                    </div>
+                                    <ul class="sidebar-widget-lists light-gray-bg pt-17 pb-15">
+									{maccms:type ids="" order="desc" by="sort"}
+                                        <li class="ptb-10"><a href="{:mac_url_type($vo)}" class="ml-30">{$vo.type_name}<span class="ml-9">+</span></a></li>
+                                     {/maccms:type}   
+                                    </ul>
+                                </div>
+                                <div class="single-sidebar-widget mb-48">
+                                    <div class="sidebar-widget-title">
+                                        <h4 class="mb-23">最新更新</h4>
+                                    </div>
+                                    <div class="recent-posts light-gray-bg">
+									{maccms:vod num="5" order="desc" by="time"}
+                                        <div class="recent-post-item pl-30 ptb-20">
+                                            <h5 class="mb-6"><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></h5>
+                                            <span class="block"><i class="zmdi zmdi-calendar-check mr-10"></i>{$vo.vod_time|mac_friend_date}更</span>
+                                        </div>
+                                      {/maccms:vod}  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {include file="public/footer"}
+	</body>
+</html>

@@ -1,0 +1,95 @@
+
+		<!-- Pattern Layer -->
+		<div class="pattern-layer" style="background-image:url({$maccms.path_tpl}images/background/pattern-2.png)"></div>
+		<div class="pattern-layer-two" style="background-image:url({$maccms.path_tpl}images/background/pattern-3.png)"></div>
+		<!-- Upper Box -->
+		
+		
+		<div class="auto-container">
+		
+        	<!-- Widgets Section -->
+            <div class="widgets-section">
+            	<div class="row clearfix">
+                	
+                    <!-- Big Column -->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+							
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-7 col-md-6 col-sm-12">
+                                <div class="footer-widget logo-widget">
+									<div class="logo">
+                                    	<a href="index.html"><img src="{$maccms.path_tpl}images/VDlogob.svg" alt="" title="" width="180px" /></a>
+                                    </div>
+									<div class="text">{$maccms.site_description}...</div>
+									<div class="social-box">
+										<a href="#" class="fa fa-facebook-square"></a>
+										<a href="#" class="fa fa-twitter-square"></a>
+										<a href="#" class="fa fa-linkedin-square"></a>
+									</div>
+									
+								</div>
+							</div>
+							
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                                <div class="footer-widget links-widget">
+									<ul class="links-widget">
+										<li><a>分类</a></li>
+										<a href="/">首页</a>
+									{maccms:type ids="" order="asc" by="sort" id="vo1" key="key1"}
+									{if condition="$key1 lt 3"}
+										<a href="{:mac_url_type($vo1)}">{$vo1.type_name}</a>
+									{/if}
+									{/maccms:type}
+										
+									</ul>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+					<!-- Big Column -->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+							
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget links-widget">
+									<ul class="links-widget">
+									<li><a>热搜</a></li>
+										{maccms:foreach name=":explode(',',$maccms.search_hot)" id="vo2" key="key2"}
+										<a href="{:mac_url('vod/search',['wd'=>$vo2])}">{$vo2}</a>
+										{/maccms:foreach}
+									</ul>
+								</div>
+							</div>
+							
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget links-widget">
+									<ul class="links-widget">
+									<li><a>随机推荐</a></li>
+										{maccms:vod order="desc" by="rnd" num="5"  type="current" }
+										<a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a>
+										{/maccms:vod}
+									</ul>
+								</div>
+							</div>
+						
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+			<!-- Footer Bottom -->
+			<div class="footer-bottom text-center">
+				<div class="copyright">Copyright &copy; 2020 {$maccms.site_name} {$maccms.site_email} {$maccms.site_icp} {$maccms.site_tj}<br>
+                 <a href="/rss/sitemap.html" target="_blank">Sitemap.Html</a>／<a href="/rss/sitemap.xml" target="_blank">Sitemap.Xml</a>／<a href="/rss/sitemap.txt" target="_blank">Sitemap.Txt</a><br>
+                  <script>vdnnc();</script></div>
+			</div>
+			
+		</div>
+	

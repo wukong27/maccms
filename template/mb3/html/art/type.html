@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+ <head>
+     <title>{$obj.type_title} - {$maccms.site_name}</title>
+    <meta name="keywords" content="{$obj.type_key}" />
+    <meta name="description" content="{$obj.type_des}" />
+     {include file="public/include"}
+ </head>
+ <body>
+{include file="public/nav"}     
+<div class="content">
+	<div class="container">
+	{include file="public/head"}
+
+	<div class="appel">
+  	<div class="breadcrumbs">您的位置：<a href="{$maccms.path}">首页</a><em class="sep">></em><a
+  			href="{$obj.type_url}">{$obj.type_name}</a></div>
+    	<div class="appel-heading clearfix">
+		<h3 class="appel-title">{$obj.type_name}<small>第<span class="text-primary">{$param.page}</span>页</small></h3>
+	</div>
+	<div class="appel-body tab-content pt15">
+		<div class="tab-appel" id="con_hot_1" style="display: block;">
+			<ul class="list-group list-group-50 list-group-dot clearfix">
+			<span id="zepto-lie"></span>
+	    	{maccms:art num="30" paging="yes" type="current" order="desc" by="time"}
+		<li><a class="text-primary" href="{:mac_url_art_detail($vo)}">{$vo.art_name} - {$vo.art_time|date='Y-m-d',###}.</a><span class="sep">-</span></li>
+		{/maccms:art}		
+			</ul>
+		</div>
+	</div>
+	{include file="public/paging"}
+  </div>
+	</div>
+</div>
+{include file="public/foot"}
+ </body>
+</html>

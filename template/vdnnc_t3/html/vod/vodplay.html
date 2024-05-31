@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>在线播放{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} - 高清资源 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}免费在线观看,{$obj.vod_name}剧情介绍" />
+<meta name="description" content="{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}免费在线观看,{$obj.vod_name}剧情介绍" />
+{include file="p/ina"}
+</head>
+
+<body class="">
+
+<div class="page-wrapper">
+ 	
+    <!-- Preloader -->
+    <div class="preloader"></div>
+ 	
+    <!-- Main Header-->
+    <header class="main-header">
+	{include file="p/h"}
+    </header>
+    <!--End Main Header -->
+	
+	<!-- Sidebar Page Container -->
+    <div class="sidebar-page-container">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+				
+				<!-- Content Side -->
+                <div class="content-side col-lg-9 col-md-12 col-sm-12">
+					<!-- Sec Title -->
+					<div class="sec-title">
+						<h4>在线播放{$obj.vod_name}</h4>
+					</div>
+					
+					<!-- News Detail -->
+					<div class="news-detail">
+						<div class="inner-box">
+							<div class="vodplay">
+							{$player_data}
+							{$player_js}
+							</div>
+							<div class="lower-content">
+								<h6>{$obj.vod_name}的详情介绍</h6>
+								<p>《{$obj.vod_name}》由{$obj.vod_director|mac_url_create='director'}导演，{$obj.vod_actor|mac_url_create='actor'}主演的{$obj.type.type_name}，本片上映于{$obj.vod_year|mac_url_create='year'}，本站更新于{$obj.vod_time|date='Y-m-d',###}，主要讲述{$obj.vod_content}…</p>
+								<div class="clearfix">
+									<div class="pull-left">
+										<div class="author">播放线路:</div>
+									</div>
+									<div class="pull-left">
+										<ul class="news-info">
+										{maccms:foreach name="obj.vod_play_list" id="vo" key="key"}
+											<li><a href="#{$vo.player_info.from}">{$vo.player_info.show}</a></li>
+										{/maccms:foreach}	
+										</ul>
+									</div>
+								</div>
+								<div class="bold-text"><span>播放列表组</span></div>
+								
+								{maccms:foreach name="obj.vod_play_list" id="vo" key="key"}	
+										<h6><a name="{$vo.player_info.from}"></a>{$vo.player_info.show}-在线播放</h6>
+										<p>
+										{maccms:foreach name="vo.urls" id="vo2" key="key2"}
+										<a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}" target="{$vo.player_info.target}" >{$vo2.name}</a>&nbsp;&nbsp;&nbsp; 
+										{/maccms:foreach}
+										</p>
+									{/maccms:foreach}	
+								
+								
+							</div>
+						</div>
+						
+						<!-- Post Share Options -->
+						
+						
+						
+						
+						
+						
+					</div>
+					
+				</div>
+				
+				<!-- Sidebar Side -->
+                <div class="sidebar-side col-lg-3 col-md-12 col-sm-12">
+                	<aside class="sidebar sticky-top">
+						
+						<!-- Recent Posts Widget -->
+                        <div class="sidebar-widget recent-posts">
+							<div class="widget-content">
+								<div class="sidebar-title">
+									<h6>猜你喜欢</h6>
+								</div>
+								<div class="content">
+									{maccms:vod num="5" type="current" order="desc" by="time"}
+									<article class="post">
+										<div class="post-inner">
+											<figure class="post-thumb"><img src="{:mac_url_img($vo.vod_pic)}" alt=""><a href="{:mac_url_vod_detail($vo)}" class="overlay-box"></a></figure>
+											<div class="text"><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></div>
+											<div class="author">Ps: {$vo.vod_remarks}</div>
+										</div>
+									</article>
+									{/maccms:vod}
+									
+									
+								</div>
+							</div>
+						</div>
+						<!-- End Recent Post Widget -->
+						
+						<!-- Popular Posts Widget -->
+                        <div class="sidebar-widget recent-posts">
+							<div class="widget-content">
+								<div class="sidebar-title">
+									<h6>随机推荐</h6>
+								</div>
+								<div class="content">
+									{maccms:vod order="desc" by="rnd" num="5"  type="current" }
+									
+									<article class="post">
+										<div class="post-inner">
+											<figure class="post-thumb"><img src="{:mac_url_img($vo.vod_pic)}" alt=""><a href="{:mac_url_vod_detail($vo)}" class="overlay-box"></a></figure>
+											<div class="text"><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></div>
+											<div class="author">Ps: {$vo.vod_remarks}</div>
+										</div>
+									</article>
+									{/maccms:vod}
+									
+								</div>
+							</div>
+						</div>
+						<!-- End Similar Courses Widget -->
+						
+						<!-- Tags Widget -->
+                        <div class="sidebar-widget tags-widget">
+							<div class="widget-content">
+								<div class="sidebar-title">
+									<h6>热门标签</h6>
+								</div>
+								<div class="content">
+									<ul>
+										{maccms:foreach name=":explode(',',$maccms.search_hot)" id="vo2" key="key2"}
+										<li><a href="{:mac_url('vod/search',['wd'=>$vo2])}">{$vo2}</a></li>
+										{/maccms:foreach}
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+					</aside>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	<!-- Featured Section Two -->
+	<section class="featured-section-two">
+		<div class="auto-container">
+			<div class="row clearfix">
+				
+				<!-- Feature Block Three -->
+				<div class="feature-block-three col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="icon flaticon-checked-1"></div>
+						<h5>全资源网站</h5>
+						<div class="text">我们为您收集全网资源</div>
+					</div>
+				</div>
+				
+				<!-- Feature Block Three -->
+				<div class="feature-block-three col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="icon flaticon-play"></div>
+						<h5>在线体验</h5>
+						<div class="text">为您提供全方位免费资源体验</div>
+					</div>
+				</div>
+				
+				<!-- Feature Block Three -->
+				<div class="feature-block-three col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="icon flaticon-time"></div>
+						<h5>实时更新</h5>
+						<div class="text">全网资源同步更新</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!-- End Featured Section Two -->
+	
+	<!-- Testimonial Section -->
+	
+	<!-- End Testimonial Section -->
+	
+	<!-- Main Footer -->
+    <footer class="main-footer">
+	{include file="p/fa"}
+	</footer>
+	
+</div>
+<!-- End pagewrapper -->
+
+<!-- Sidebar Nav -->
+<div class="sidenav-list">
+	<ul class="navbar">
+	{include file="p/ha"}
+	</ul>
+</div>
+<!-- End Sidebar Nav -->
+
+<!-- Hidden Navigation Bar -->
+<section class="hidden-bar left-align">
+	<div class="color-layer"></div>
+	<div class="hidden-bar-closer">
+		<span class="flaticon-multiply"></span>
+	</div>
+	<!-- Hidden Bar Wrapper -->
+	<div class="hidden-bar-wrapper">
+	{include file="p/hb"}
+	</div>
+	<!--Copyright Text-->
+	
+</section>
+
+<!--Scroll to top-->
+{include file="p/inb"}
+</body>
+</html>

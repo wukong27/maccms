@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>{$obj.vod_name}原创直播间{$obj.vod_blurb}</title>
+<meta name="description" content="{$obj.vod_name} - 直播间{$obj.vod_blurb}在线观看 - {$maccms.site_name}" /> 
+<meta name="keywords" content="{$obj.vod_name} - 直播间在线观看 - {$maccms.site_name}" /> 
+
+   
+<link rel="stylesheet" href="/MVjs/style1.css">   
+<link rel="stylesheet" href="/MVjs/publice.css">   
+
+   
+    <script src="{$maccms.path}static/js/jquery.js"></script>
+    <script>var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};</script>
+	
+	
+	
+<style type="text/css">
+.php-asp {color: #fff;}
+body {background:#171723;}
+*{margin:0px; padding:0px;touch-action: pan-y;text-align: center;
+}
+.ts-wrap a{color: #fff; font-size:11px;line-height:1.9703em;}
+#radius {border: 2px solid #fff;width: 50px;height: 50px;border-radius:70%;}
+
+
+</style>	
+	
+	
+	
+</head>
+<body>   <div class="ts-wrap">
+<div class="topWrap clearfix">
+		<ul>
+			<li><a href="/">首页</a></li>
+			<li><a href="{$maccms.site_icp}">朋友</a></li>
+			<li class="cur"><a href="{$maccms.site_icp}">推荐</a></li>
+			<li><a href="{$maccms.site_icp}">关注</a></li>
+			<li><a href="{$maccms.site_icp}">VIP礼品</a></li>
+		</ul>
+	</div>
+
+
+
+
+
+
+
+<!--TOP视频播放php-asp.net-->  
+<div class="app">
+        <video id="player" width="100%" height="auto" controls webkit-playsinline='true' playsinline='true'  x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true' x5-video-ignore-metadata='true' controlslist="nodownload">
+		你的浏览器不支持HTML5播放此视频
+        <span style="white-space:pre">    </span><!-- 支持播放的文件格式 -->
+         <source src="" type='video/mp4' /> 
+		
+		</video>
+    </div>
+	
+	
+
+	
+	
+<script src="/MVjs/jquery.min.js" ></script> 	
+<script>  
+var video = document.getElementById("player");  
+var vList = [
+'{$obj.vod_blurb}',
+{maccms:vod num="18" type="current" order="desc" by="hits"}
+'{$vo.vod_blurb}',
+{/maccms:vod}
+'{$obj.vod_blurb}']; // php-asp.net原创2开相对路径  
+                var vLen = vList.length; 
+                var curr = 0;
+                $(document).ready(function(){
+  
+                         play();  
+                        
+                        video.addEventListener('ended', function(){
+                            play();
+                        }); 
+                           
+                        });                    
+                             
+                        function play() {  
+                            video.src = vList[curr];  
+                            video.load();   
+                            video.play();  
+                            curr++;  
+                            if(curr >= vLen){  
+                                curr = 0; //重新循环播放
+                            }  
+                              
+                        }  
+</script>
+	
+
+
+
+
+
+
+<!--TOP分类导航php-asp.net-->  
+
+<div style="position:absolute;bottom:100px;color: #f00;left:80px;font-size:14px; ">
+{maccms:type ids="parent" order="asc" by="sort" flag="vod"}
+		 ❤ <a href="{:mac_url_type($vo)}">{$vo.type_name}</a>{/maccms:type}
+	</div>
+
+
+<script src="/MVjs/jquery.js"></script>  
+<script src="/MVjs/clipboard.min.js"></script> 
+
+<!--TOP微信导航php-asp.net--> 
+<span style="opacity:0.8;border-radius:7px;background-color: #fff;position:absolute;bottom:170px;right:10px;color:#000;font-size:12px;">&nbsp; <span style="color: #f00;">♥</span>&nbsp; QQ:{$maccms.site_qq} / 微信号:[<span id="target">{$maccms.site_email}</span>] &nbsp;
+
+
+
+</span>
+
+
+
+
+
+
+
+
+<div  style="position:absolute;top:80px;right:9px;">
+       <a data-clipboard-action="copy" data-clipboard-target="#target" id="copy_btn"><img src="/MVjs/mvwei.png" alt="加微信"></a><br>
+	   </div>
+
+<div  style="position:absolute;top:150px;right:9px;">	
+       <a href="http://wpa.qq.com/msgrd?v=3&uin={$maccms.site_qq}&site=qq&menu=yes" target="_blank"><img src="/MVjs/qq.png" alt="加QQ"></a><br>
+	   </div>
+
+
+
+
+<div style="position:absolute;bottom:70px;left:10px;">
+{maccms:vod num="7" type="current" order="desc" by="rnd"}
+     <a href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}"><img style="opacity: 0.9;border-radius:70%;border:2px solid #fff;" height="50" width="50" src="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}"></a><br>
+{/maccms:vod}
+<!--asp-asp.net结束-->
+
+   </div>
+
+
+
+
+<script>    
+ 
+	
+	$(function(){
+
+        var clipboard = new Clipboard('#copy_btn');    
+        clipboard.on('success', function(e) {    
+
+            alert("微信号复制成功,可以去粘贴了。",1500);
+
+            window.location.href='weixin://';
+
+            e.clearSelection();    
+
+            console.log(e.clearSelection);    
+
+        });    
+		
+		$(".num-jian").click(function(){
+			if($("#num").val() <= 1){
+				return;
+			}else{
+				var num_s = parseInt($("#num").val()) - 1;
+				$("#num").val(num_s);
+			}
+		})
+		$(".num-jia").click(function(){
+			var num_s = parseInt($("#num").val()) + 1;
+			$("#num").val(num_s);
+		})
+	})
+	
+
+var h_url = window.location.href;
+$("#wangzhan").val(h_url);
+$("#wangzhan2").val(h_url+"TC");
+
+	function copytext(f, hm) {
+	    wx_ham = hm; var d, a = document.getElementById(f); var c = a.hasAttribute("readonly");
+	    if (!c) { a.setAttribute("readonly", "") } a.select(); a.setSelectionRange(0, a.value.length); if (!c) {
+	        a.removeAttribute
+("readonly")
+	    } d = a.value; try { document.execCommand("copy", false, null) } catch (b) { alert("您的系统不支持，请长按后复制") }
+	}
+	function copyok() {
+	    if (confirm("复制成功，是否打开微信，添加好友？")) {
+	        window.location.href = "weixin://"; try {
+	            _paq.push(['trackEvent', 'copys', 'wxhao', wx_ham]);
+	        } catch (c) { } 
+	    } 
+	}
+
+			$('#phone').click(function () {
+				$('#source').val(window.location.href);
+			});
+			$('#phone2').click(function () {
+				$('#source2').val(window.location.href+"-TC");
+			});
+</script> 
+
+
+
+  </div>
+</body>
+</html>
+

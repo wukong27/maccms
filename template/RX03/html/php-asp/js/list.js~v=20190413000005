@@ -1,0 +1,115 @@
+(function() {
+
+	var $ = function(e) {
+		return Array.prototype.slice.apply(document.querySelectorAll(e));
+	};
+	
+	var getURLString = function(){
+		return location.protocol + '//' +location.host;
+	};
+	
+	var getRandom = function(){
+		return new String(Math.random()).substring(2);
+	};
+	
+	var getQueryString = function(name) { 
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+        var r = window.location.search.substr(1).match(reg); 
+        if (r != null) return unescape(r[2]); 
+        return null; 
+    }
+	
+	var video_list = $('#video_list')[0];
+	
+	var pageIndex = 1,
+		pageSize = 10,
+		pageIndexName = 'page', // 设置分页码页参数名称
+		pageSizeName = 'count', // 设置分页大小参数名称
+		video_url = '/user.php'; // 设置请求地址
+		item_url = '/shipin.php',  // 替换跳转链接
+		item_img = 'thumbnail',  // 替换图片链接
+		item_txt = 'title';  // 替换显示文本
+
+	// 加载数据到页面
+	var loadListItem = function(data) {
+		var list = data.package;
+		var total = data.total;
+		var uid = getQueryString('uid');
+		var cid = getQueryString('cid');
+		if(list.length==0) {
+			return alert('已经到底！');
+		}
+		
+		var tmp =
+			'<div class="guess-item">' +
+			'<div class="image-wrapper">' +
+			'<a href="$url" target="_blank">' +
+			'<div style="background-position: center center; background-size: cover; width: 100%;height: 100%;background-repeat: no-repeat; background-image: url($img);"></div>' +
+			'</a>' +
+			'</div>' +
+			'<a href="$url2" target="blank" class="title clamp"><span>$txt</span></a>' +
+			'<div class="viewcount">' +
+			'<div class="viewcount-space"></div>' +
+			'<div class="price"><span>$dashangsls 人付款</span></div>' +
+			'</div>' +
+			'</div>';
+		var htmlStr = '';
+		for(var idx = 0, siz = list.length; idx < siz; idx++) {
+			var dat = list[idx];
+			var dashangsls = Math.ceil(Math.random()*1000);;
+			htmlStr +=
+				tmp
+				.replace('$url', item_url+'?id='+dat.res_id+'&uid='+uid+'&time='+getRandom())
+				.replace('$url2', item_url+'?id='+dat.res_id+'&uid='+uid+'&time='+getRandom())
+				.replace('$img', dat[item_img])
+				.replace('$txt', dat[item_txt])
+				.replace('$dashangsls', dashangsls)
+			;
+		}
+		    video_list.innerHTML += htmlStr;
+    		if(idx<16) {
+    			document.getElementById("video-more").innerHTML="全都在这了！";
+    		}
+	};
+
+
+	/**
+	 * 加载视频列表
+	 */
+	var loadVideoList = function() {
+		var uid = getQueryString('uid');
+		var cid = getQueryString('cid');
+		axios.get(
+			[getURLString(), video_url, '?json=1&', pageIndexName,'=',pageIndex, '&', pageSizeName, '=', pageSize, '&', 'uid', '=', uid, '&', 'cid', '=', cid].join('') 
+			).then(function(res){
+			loadListItem(res.data);
+		}).catch(function(res){
+//			alert('请求错误:'+JSON.stringify(res))
+		});
+		    pageIndex++;
+		
+	};
+	
+	/**
+	 * 判断是否是微信浏览器的函数
+	 */
+	var isWeiXin = function (){
+			var ua = window.navigator.userAgent.toLowerCase();
+			if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+	// 更多事件绑定
+	if(isWeiXin()){
+		$('#more')[0].addEventListener('touchend', loadVideoList)
+	}else{
+		$('#more')[0].addEventListener('click', loadVideoList)
+	}
+
+	// 首次加载数据
+	loadVideoList();
+
+}())

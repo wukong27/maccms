@@ -1,0 +1,173 @@
+<!-- Header Upper -->
+        <div class="header-upper">
+        	<div class="outer-container">
+            	<div class="clearfix">
+                	
+					<!-- Header Left -->
+					<div class="header-left clearfix">
+
+						<!-- Left Sidebar Btn -->
+						<div class="left-sidebar-btn hidden-bar-opener">
+							<span class="icon flaticon-menu-2"></span>
+						</div>
+						
+						<div class="pull-left logo-box">
+							<div class="logo"><a href="/"><img src="{$maccms.path_tpl}images/logo.png" alt="" title="" width="180px" height="50px"></a></div>
+							<div class="dark-layout-logo"><a href="index.html"><img src="{$maccms.path_tpl}images/logo-4.png" alt="" title=""></a></div>
+						</div>
+						
+						<!-- Search -->
+                        <div class="search-box">
+                        	<form method="post" action="{:mac_url('vod/search')}">
+                                <div class="form-group">
+                                    <input type="search" name="wd" value="{$param.wd}" placeholder="搜一下吧" required>
+                                    <button type="submit"><span class="icon fa fa-search"></span></button>
+                                </div>
+                            </form>
+						</div>
+						
+					</div>
+					
+					<!-- Header Right -->
+					<div class="header-right clearfix">
+						
+						<div class="nav-outer clearfix">
+                    
+							<!-- Main Menu -->
+							<nav class="main-menu navbar-expand-md">
+								<div class="navbar-header">
+									<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+
+								<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+									<ul class="navigation clearfix">
+										{maccms:type ids="" order="asc" by="sort" id="vo1" key="key1"}
+										{if condition="$key1 lt 3"}
+										<li class="dropdown"><a href="#">{$vo1.type_name}</a>
+											<ul>
+												{maccms:type parent="'.$vo1['type_id'].'" order="asc" num="10" by="sort" id="vo2" key="key2"}
+												<li><a href="{:mac_url_type($vo2,[],'show')}">{$vo2.type_name}</a></li>
+												{/maccms:type}
+											</ul>
+										</li>
+										{/if}
+										{/maccms:type}
+									</ul>
+								</div>
+								
+							</nav>
+							
+						</div>
+						
+						<!-- Options Box -->
+						<div class="options-box clearfix">
+							
+							<!-- mSoA -->
+							<div class="message-box">
+								<a href="{:mac_url('label/so')}" ><img src="{$maccms.path_tpl}images/so.svg" title="搜索一下" title="" width="20px" height="21px" ></a>
+							</div>
+							<!-- mAoB -->
+							
+							<!-- Notification Box -->
+							<div class="notification-box">
+								<div class="dropdown">
+									<button class="notification-box-btn dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flaticon-notification"></span><i class="notification-alert"></i></button>
+									<div class="dropdown-menu pull-right cart-panel" aria-labelledby="dropdownMenu">
+
+										<div class="notification-block">
+											<div class="inner">
+												<div class="image"><img src="{$maccms.path_tpl}images/resource/author-1.jpg" alt="" /></div>
+												<h3><a href="">未来公告</a></h3>
+												<div class="notification-text">这里预留未来公告展示模块，等待更新吧！</div>
+												<div class="post-time">未来添加</div>
+											</div>
+										</div>
+										
+										<a href="#" class="view">更多>>></a>
+										
+									</div>
+								</div>
+							</div>
+							<!-- End Notification Box -->
+							
+							<!-- Profile Box -->
+							<div class="profile-box dropdown" id="someElementID5">
+								<div class="btn btn-default dropdown-toggle">
+									<span class="profile-image">
+                                      {if condition="$GLOBALS['user']['user_id']" gt 0}
+                                      <img src="{$user.user_id|mac_get_user_portrait}" alt="" />
+                                      {else/}
+                                      <img src="{$maccms.path_tpl}images/my.svg" alt="" />
+                                      {/if}
+                                  </span> <i class="arrow flaticon-down-arrow"></i>
+								</div>
+								<div class="profile-content">
+									<div class="setting"><a >个性中心</a></div>
+									<!-- Dark Mode -->
+									<div class="dark-mode">
+										<div class="clearfix">
+											<div class="pull-left">
+												<div class="mode"><span class="icon"><img src="{$maccms.path_tpl}images/icons/moon.png" alt="" /></span> 夜间模式</div>
+											</div>
+											<div class="pull-right">
+												<!-- Dark Btns -->
+												<ul class="dark-buttons clearfix">
+													<li data-tab="#" class="off">关</li>
+													<li class="boll"><span class="round"></span></li>
+													<li data-tab="#" class="on">开</li>
+												</ul>	
+											</div>
+										</div>
+									</div>
+									<!-- Pages -->
+									<ul class="pages">
+                          {if condition="$GLOBALS['user']['user_id']" gt 0}            
+                         <li><a >ID:{$user.user_id}</a></li>
+					    <li><a >Name:{$user.user_name}</a></li>
+					    <li><a >登录次:{$user.user_login_num}</a></li>
+					    <li><a >积分:{$user.user_points}</a></li>
+					    <li><a href="{:mac_url('user/index')}">个人中心</a></li>
+					    <li><a href="{:mac_url('user/info')}">修改资料</a></li>
+                        <li><a href="{:mac_url('user/favs')}">我的收藏</a></li>					    
+					    <li><a href="{:url('user/logout')}">退出</a></li>
+                         {else/}             
+						<li><a href="javascript:;" class="mac_user">登录</a> </li> 
+                        <li> <a href="{:mac_url('user/reg')}">注册</a> </li>
+                          {/if}            
+                                      
+                                      
+									</ul>
+								</div>
+							</div>
+							
+						</div>
+						
+					</div>
+					
+                </div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+        
+		<!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon fa fa-remove"></span></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src="{$maccms.path_tpl}images/logo.png" alt="" title=""></a></div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            </nav>
+        </div><!-- End Mobile Menu -->
+		
+<span style="display:none" class="mac_ulog_set" alt="设置文章内容页浏览记录" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.art_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+<span style="display:none" class="mac_ulog_set" alt="设置专题内容页浏览记录" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.topic_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+<span style="display:none" class="mac_ulog_set" alt="设置内容页浏览记录" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+<span style="display:none" class="mac_ulog_set" alt="设置视频播放记录" data-type="4" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+<span style="display:none" class="mac_ulog_set" alt="设置视频播放记录" data-type="5" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+<span style="display:none" class="mac_history_set" alt="设置History历史记录" data-name="[{$obj.type.type_name}]{$obj.vod_name}" data-pic="{$obj.vod_pic|mac_url_img}"></span>
+<span class="mac_history" style="display:none;"></span>

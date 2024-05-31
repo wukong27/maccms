@@ -1,0 +1,28 @@
+{include file="ads/hengfu"}<!--顶部图片广告-->
+{include file="ads/tubiao"}<!--APP图标-->
+{include file="ads/duocaiwenzi"}<!--彩色文字广告-->
+<div class="appel">
+			<div id="youmu" class="youmu-app">
+				<div class="area">
+				    {include file="ads/daohangwenzi"}<!--导航文字广告-->
+				     {maccms:type order="asc" by="sort" ids="parent"}
+					<dl class="first">
+						<dt><a href="{:mac_url_type($vo)}">{$vo.type_name}</a></dt>
+						{maccms:type parent="'.$vo['type_id'].'"  order="asc" id="vo2" key="key2"}	
+						{if condition="$key lt 20"}
+						<dd><a href="{:mac_url_type($vo2)}">{$vo2.type_name}</a></dd>
+						{/if}
+						{/maccms:type}
+					</dl>
+				   {/maccms:type}
+				</div>
+			</div>
+			<div id="ddab">
+				<div class="seach">
+					<form action="{:mac_url('vod/search')}" method="get">
+						<input type="text" placeholder="视频关键词..." id="searchbutton" name="wd">
+						<button>视频搜索</button>
+					</form>
+				</div>
+			</div>
+		</div>

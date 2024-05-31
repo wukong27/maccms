@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{$maccms.site_name} - 您喜欢的综合内容网站！</title>
+<meta name="keywords" content="{$maccms.site_keywords}" />
+<meta name="description" content="{$maccms.site_description}" />
+{include file="p/ina"}
+
+</head>
+
+<body class="">
+
+<div class="page-wrapper">
+ 	
+    <!-- Preloader -->
+    <div class="preloader"></div>
+ 	
+    <!-- Main Header-->
+    <header class="main-header">
+    {include file="p/h"}	
+    </header>
+    <!--End Main Header -->
+	
+	<!-- Sidebar Page Container -->
+    <div class="sidebar-page-container">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+				
+				<!-- Sidebar Side -->
+                <div class="sidebar-side left-sidebar col-lg-3 col-md-12 col-sm-12">
+                	<aside class="sidebar sticky-top">
+						
+						<!-- Tags Widget -->
+                        {include file="index/taga"}
+						
+						<!-- Featured Widget -->
+                        {include file="index/tagb"}
+						
+						<!--  Support Widget -->
+                        {include file="index/tj"}
+						
+					</aside>
+				</div>
+				
+				<!-- Content Side -->
+                <div class="content-side right-sidebar col-lg-9 col-md-12 col-sm-12">
+					<!-- Sec Title -->
+                	<div class="sec-title">
+						<div class="clearfix">
+							<div class="pull-left">
+								<h4>影视视频</h4>
+							</div>
+							
+						</div>
+					</div>
+					
+					<!-- Featured Section -->
+					<div class="featured-section">
+						<div class="row clearfix">
+							
+							<!-- 视频类开始 -->
+							{maccms:vod num="20" type="{include file="id/vodid"}" order="desc" by="hits_month"}
+							{include file="txt/vod"}
+							{/maccms:vod}
+							<!-- 视频类结束 -->
+							
+							
+							
+						</div>
+					</div>
+					<!-- End Featured Section -->
+					
+					<!-- Courses Section -->
+					<div class="courses-section">
+						<!-- Sec Title -->
+						<div class="sec-title">
+							<div class="clearfix">
+								<div class="pull-left">
+									<h4>文学在线</h4>
+								</div>
+								<div class="pull-right">
+									
+								</div>
+							</div>
+						</div>
+						<div class="row clearfix">
+							
+							<!-- 文学开始 -->
+							{maccms:vod num="21" type="{include file="id/bookid"}" order="desc" by="hits_month"}
+							{include file="txt/book"}
+							{/maccms:vod}
+							<!-- 文学结束 -->
+							
+							
+						</div>
+					</div>
+					
+					
+					
+					<!-- End  -->
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	<!-- Main Footer -->
+    <footer class="main-footer">
+	{include file="p/fa"}
+	</footer>
+	
+</div>
+<!-- End pagewrapper -->
+
+<!-- Sidebar Nav -->
+<div class="sidenav-list">
+	<ul class="navbar">
+	{include file="p/ha"}
+	</ul>
+</div>
+<!-- End Sidebar Nav -->
+
+<!-- Hidden Navigation Bar -->
+<section class="hidden-bar left-align">
+	<div class="color-layer"></div>
+	<div class="hidden-bar-closer">
+		<span class="flaticon-multiply"></span>
+	</div>
+	<!-- Hidden Bar Wrapper -->
+	<div class="hidden-bar-wrapper">
+	{include file="p/hb"}
+	</div>
+	<!--Copyright Text-->
+	
+</section>
+
+<!--Scroll to top-->
+
+
+
+{include file="p/inb"}
+
+</body>
+</html>

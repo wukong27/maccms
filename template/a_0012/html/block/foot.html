@@ -1,0 +1,49 @@
+
+<div class="container">
+  <div class="banner-layout-box gap ewave-banner-box ewave-remove-box">
+    <div class="ewave-banner-wrapper ewave-remove-list" id="banner-bottom"></div>
+    <script src="{$maccms.path_ads}banner_bottom.js"></script>
+  </div>
+</div>
+<div class="bottom">
+  <div class="container">
+    <p class="hidden-xs"> <a href="{:mac_url('label/new')}">最新更新</a> <i>
+      |</i> <a href="{:mac_url('map/index')}">网站地图</a> <i>
+     <!-- |</i> <a href="{:mac_url('rss/index')}">RSS订阅</a> <i>
+      |</i> <a href="{:mac_url('rss/baidu')}">百度蜘蛛</a> <i>
+      |</i> <a href="{:mac_url('rss/google')}">谷歌地图</a> <i>|</i> <a href="{:mac_url('rss/bing')}">必应地图</a> <i>
+      |</i> <a href="{:mac_url('rss/so')}">360地图</a> <i>|</i> <a href="{:mac_url('rss/sogou')}">搜狗地图</a> <i>
+      |</i> <a href="{:mac_url('rss/sm')}">神马爬虫</a> -->
+    </p>
+    <p>本站所有视频和图片均来自互联网收集而来，版权归原创者所有，本网站只提供web页面服务，并不提供资源存储，也不参与录制</p>
+    <p>Copyright © {:date(Y)} {$maccms.site_name}({$maccms.site_url}) All Rights Reserved</p>
+  </div>
+  <div class="ewave-banner-box float-bottom clearfix hidden-lg hidden-xl hidden-xxl ewave-remove-box">
+    <div class="ewave-banner-wrapper ewave-remove-list" id="float-bottom"></div>
+    <a class="ewave-banner-close"><i class="fa fa-close"></i></a>
+    <script src="{$maccms.path_ads}float_bottom.js"></script>
+  </div>
+  <div class="bottom-placeholder"></div>
+</div>
+<div class="fixedbar-fixed-bar">
+  <div class="ant-back-top"> <i class="fa fa-angle-up"></i> <span class="fixedbar-top">顶部</span> <a href="javascript:void(0);" class="fixedbar-top-link"></a> </div>
+  <div class="type hidden-xs hidden-sm hidden-md">
+    {maccms:type ids="parent" flag="vod" by="sort" order="asc"}
+    <a href="javascript:void(0);" class="fixedbar-anchor-text" data-id="#index-vod-{$vo.type_id}">{$vo.type_name}</a>
+    {/maccms:type}
+    {if mac_data_count(0,'all','actor') gt 0}
+    <a href="javascript:void(0);" class="fixedbar-anchor-text" data-id="#index-actor">明星库</a>
+    {/if}
+    {maccms:type ids="parent" flag="art" by="sort" order="asc"}
+    <a href="javascript:void(0);" class="fixedbar-anchor-text" data-id="#index-art-{$vo.type_id}">{$vo.type_name}</a>
+    {/maccms:type}
+    {if mac_data_count(0,'all','topic') gt 0}
+    <a href="javascript:void(0);" class="fixedbar-anchor-text" data-id="#index-topic">精彩专题</a>
+    {/if}
+  </div>
+  <div class="skin-switch">
+    <a class="light" href="javascript:;" title="切换至亮色模式"><span class="fa fa-sun-o"></span></a>
+    <a class="dark" href="javascript:;" title="切换至暗色模式"><span class="fa fa-moon-o"></span></a>
+  </div>
+</div>
+<div style="display:none;">{$maccms.site_tj}</div>

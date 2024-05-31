@@ -1,0 +1,363 @@
+
+
+/*首页*/
+.ts-wrap{ min-width: 310px; max-width: 650px; margin: 0 auto;background:#fff;}
+body{margin:0px;}
+
+/*导航php-asp.net原创源码*/
+.aui-php {background-color: rgba(255, 250, 250, 0.4);
+    padding: 0.5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+.aui-asp{background-color: #89d8d3;
+background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);color:#fff;}
+.aui-asp a:hover{color: #f00;}
+
+.aui-phpasp{background:#fff;color:#000;}
+	
+.aui-palace-grid {
+    position: relative;
+    float: left;
+    padding: 1px;
+    width: 20%;
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+
+.aui-palace-three{
+    padding:0rem 0.5rem 0.2rem 0.5rem;
+}
+.aui-palace-three .aui-palace-grid{
+ box-shadow: 0 5px 15px rgba(139, 137, 137, .5);
+   /* background:#212121;box-shadow: 0 5px 15px rgba(252, 28, 143, .5);*/
+
+    text-align:center;
+    border-radius:7px;
+    margin:0.5% 0.5%;
+    width:15.6%;
+    padding:0.5rem 0; 
+}
+           
+            .page-head-1{width: 100%;height: auto;font-size: 14px;}
+            
+            
+            .cate-section{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:14px 10px;}
+            .cate-item{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;font-size:13px;color:#303133;text-decoration:none;width:25%}
+            .cate-item:hover{text-decoration:none;color:#303133}
+            .cate-item .div-img{margin-bottom:6px;-webkit-border-radius:50%;border-radius:50%;-webkit-box-shadow:1px 1px 9px rgba(250,67,106,.6);box-shadow:1px 1px 9px rgba(250,67,106,.6)}
+            .cate-item .div-tit{color: #000;font-weight:bold;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap;display:block;margin-bottom:20px;}
+            
+            
+            .page-guess{margin-top:7px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;height:68px;padding:2px 14px 0;background:#fff}
+            .page-guess .div1{display:inline-block;overflow:hidden;position:relative;width:39px;height:39px;margin-right:9px}
+            .tit-box{-webkit-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-webkit-flex-direction: column;-ms-flex-direction: column;flex-direction: column;}
+            .tit-box .tit{font-size:15px;line-height:1.3}
+            .tit-box .tit2{font-size:11px;color:#909399}
+
+            
+            
+            .guess-item{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:48%;padding-bottom:19px}
+            .image-wrapper{font-size:0;background:#f3f3f3;-webkit-border-radius:4px;border-radius:4px;width:100%;height:162px;-webkit-border-radius:3px;border-radius:3px;overflow:hidden}
+            .guess-item:nth-child(odd){margin-right:4%}
+            .image-wrapper a{width:100%;height:100%;-webkit-transition:.6s;-o-transition:.6s;transition:.6s;opacity:0;width:100%;height:100%;opacity:1}
+            .guess-item .title{font-size:11px;color:#303133;line-height:39px;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;display:block}
+            .viewcount{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
+            .viewcount-space{width:4px}
+            .price{font-size:11px;color:#fa436a;line-height:1}
+            
+            
+            .uni-tabbar *{box-sizing:border-box}
+            .uni-tabbar{box-sizing:border-box;position:fixed;left:0;bottom:0;width:100%;z-index:998;}
+            .uni-tabbar-border{position:absolute;left:0;top:0;width:100%;height:1px;-webkit-transform:scaleY(.5);transform:scaleY(.5)}
+            .uni-tabbar__item{-webkit-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex:1;flex:1;font-size:0;text-align:center;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+            .uni-tabbar__bd,.uni-tabbar__item{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal}
+            .uni-tabbar__bd{position:relative;height:50px;-webkit-flex-direction:column;flex-direction:column}
+            .uni-tabbar__icon{position:relative;display:inline-block;margin-top:5px;width:27px;height:27px}
+            .uni-tabbar__icon img{width:100%;height:100%}
+
+
+            .uni-page-head{position:fixed;left:0;width:100%;height:44px;padding:7px 3px;display:-webkit-box;display:-webkit-flex;display:flex;overflow:hidden;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;box-sizing:border-box;z-index:998;color:#fff;background-color:#000;-webkit-transition-property:all;transition-property:all}
+            .uni-page-head-hd{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;font-size:16px}
+            .uni-btn-icon{overflow:hidden;min-width:1em}
+            .uni-page-head-bd{position:absolute;left:70px;right:70px;min-width:0;-webkit-user-select:auto;user-select:auto}
+            .uni-page-head__title{font-weight:700;font-size:16px;line-height:30px;text-align:center;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+            .uni-page-head-ft{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:row-reverse;flex-direction:row-reverse;font-size:13px}
+            
+            
+            .uni-tabbar *{box-sizing:border-box}
+            .uni-tabbar{box-sizing:border-box;position:fixed;left:0;bottom:0;width:100%;z-index:998;}
+            .uni-tabbar-border{position:absolute;left:0;top:0;width:100%;height:1px;-webkit-transform:scaleY(.5);transform:scaleY(.5)}
+            .uni-tabbar__item{-webkit-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex:1;flex:1;font-size:0;text-align:center;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+            .uni-tabbar__bd,.uni-tabbar__item{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;align-items:center;-webkit-box-orient:vertical;-webkit-box-direction:normal}
+            .uni-tabbar__bd{position:relative;height:50px;-webkit-flex-direction:column;flex-direction:column}
+            .uni-tabbar__icon{position:relative;display:inline-block;margin-top:5px;width:27px;height:27px}
+            .uni-tabbar__icon img{width:100%;height:100%}
+            
+            
+            .empty{position:fixed;left:0;top:0;width:100%;height:100vh;padding-bottom:49px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;background:#fff}
+            .empty .empty-tips{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:12px;color:#c0c4cc}
+            .empty .navigator{color:#fa436a;margin-left:7px}
+            
+            
+            .guess-section{display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;padding: 44px 14px 0;background: #fff;}
+
+
+/*导航*/
+.Utop{text-align: center;background: url(../php-asp/img/head.jpg) #FFECED top center;height:auto;}
+.Utop h5{padding-top: 10px;font-size: 28px;font-family:'Microsoft YaHei'; text-align: center; color: #000;text-shadow:#fff 1px 1px 1px}
+
+.UStop{text-align: center;background: url(/php-asp/img/maneBG.gif) #fff top center;height:90px;}
+.UStop span{font-size: 13px;text-align: center; color: #333;font-weight:bold;}
+.UStop h5{padding-top: 10px;font-size: 28px;font-family:'Microsoft YaHei'; text-align: center; color: #000;text-shadow:#fff 1px 1px 1px}
+.UStop p{text-align: center;padding-top: 3px; font-size: 32px;color: #f60; }
+.UStop h3{font-size: 32px;text-align: center; color: #fff; margin: 0px;}
+
+
+/*瀑布流开始php-asp.net爱源码*/
+.wall {
+  display: block;
+  position: relative;
+}
+.wall-column {background-color: #fff;
+  display: block;
+  position: relative;
+  width: 50%;
+  float: left;
+  padding: 0 1%;
+  box-sizing: border-box;
+}
+.article {text-align: left;background: #f5f5f5;display: block;
+  margin: 0 0 5% 0;/*上下图距php-asp.net爱源码*/
+  border-radius: 10px;transition: all 100;overflow: hidden;position: relative;
+}
+.article:hover{ transform: scale(1.01);}
+.article img {border-radius: 5px;display: block;width: 100%;margin: 0 0 0% 0;}
+.article a{ color: #fff;}
+.article p{position:absolute;left:0;bottom:0;padding:1px 5px; margin:35px 5px;overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 70%; font-size: 1.2em; line-height: 1.5;}
+.article.am-circle { width: 40px; height: 40px;border: 2px solid #fff; }
+
+#radius {position:absolute;right:0;bottom:0;border: 2px solid #fff;width: 40px;height: 40px;margin:5px 5px;border-radius:70%;  overflow:hidden;}
+.article small{}
+.article input{ width: 20%; padding: 0.6em; border-radius: 0.4em; font-size: 1.1em; z-index: 100; background-color: #f60; border: none; position: absolute; bottom: 3%; right: 5%; color: #fff; box-shadow: 0 0 7px #d7d7d7;}
+
+.article span.statusIco {position:absolute;left:0;bottom:0;padding:1px 5px;margin:7px 5px;}
+.article span.zbz2 {border: 1px solid #fff;background-color: rgba(255,255,255,0.6);border-radius: 0px 10px ;color:#333;box-shadow: 0px 3px 6px rgba(255,255,255, .5);}
+/*background-color:#F3668C  紫色背景*/
+/*background-color:#F3668C  紫色背景*/
+/*background-color:#F3668C  紫色背景*/
+
+.articll {text-align: left;background: #f5f5f5;display: block;
+  margin: 0 0 5% 0;/*上下图距php-asp.net爱源码*/
+  border-radius: 10px;transition: all 100;overflow: hidden;position: relative;
+}
+.articll:hover{ transform: scale(1.01);}
+.articll img {border-radius: 5px;display: block;width: 100%;margin: 0 0 0% 0;}
+.articll a{ color: #fff;}
+.articll p{position:absolute;left:0;bottom:0;padding:1px 5px; margin:35px 5px;overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 70%; font-size: 1.2em; line-height: 1.5;}
+.articll.am-circle { width: 40px; height: 40px;border: 2px solid #fff; }
+.articll small{}
+.articll input{ width: 20%; padding: 0.6em; border-radius: 0.4em; font-size: 1.1em; z-index: 100; background-color: #f60; border: none; position: absolute; bottom: 3%; right: 5%; color: #fff; box-shadow: 0 0 7px #d7d7d7;}
+
+.articll span.statusIco {position:absolute;left:0;bottom:0;padding:1px 5px;margin:7px 5px;}
+.articll span.zbz2 {border: 1px solid #fff;background-color: rgba(255,255,255,0.6);border-radius: 0px 10px ;color:#333;box-shadow: 0px 3px 6px rgba(255,255,255, .5);}
+/*background-color:#F3668C  紫色背景*
+
+/*瀑布流结束*/
+.wrapper h3{ text-align: center; margin:0 20%; white-space: nowrap; text-overflow: ellipsis; font-weight:normal; color: #333; overflow: hidden;  font-size: 1.5em; padding: 0.7em 0;}
+.wrapper h4{ width: 90%; margin:0 5%; text-align: justify; font-weight:normal; color: #999;  font-size: 1.2em; margin-bottom: 3%; line-height:1.5; }
+
+
+/*php-asp.net爱源码-原创二开-【广告弹窗】*/
+.notice-board {font-family:'Microsoft YaHei';
+
+position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	background-color: rgba(0,0,0,.6);display: flex;
+	 align-items: center;
+}
+.board-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    padding-top: 30%;
+}
+.board-title>h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #000;
+    font-size: 1.5rem;
+}
+.board-content{font-family:'Microsoft YaHei';
+  
+text-align:center;
+color: #333;
+ text-shadow: 0 8px 9px #fff, 0px -2px 1px #fff;
+    font-size: 1.2rem;
+    margin: 10px;
+    overflow: auto;
+    height: 30%;
+    margin-top: 30%;
+    padding-top: 30px;
+
+}
+.notice-board .board {
+    position: relative;
+    z-index: 9999;
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 15px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background:url(../php-asp/img/notice1.gif);
+}
+.notice-board .board-btn-group {
+
+    display: flex;
+  
+   
+    justify-content: center;
+    padding: 20px 10px;
+}
+.board-btn {
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+    border-radius: 6px;
+  
+    font-size: 1.2rem;
+    width: calc(50% - 5px);
+}
+
+/*分页按钮*/
+.php-asp-net{clear:both;  text-align: center;height:50px;padding-top: 30px;}
+.php-asp-net a {display: inline-block; padding:4px 9px; margin: 2px; margin-bottom: 5px; color: #31363c; text-decoration: none}
+
+.pageg{clear:both;  text-align: center;height:50px;padding-top: 30px;background-color: #fff; }
+.pageg a {display: inline-block; font-family: Arial; font-size: 13px; border: #dbdbdb 1px solid; padding:4px 9px; margin: 2px; margin-bottom: 5px; color: #31363c; text-decoration: none}
+.pageg a:hover,.pageg a:focus{font-family: Arial;font-size: 13px;border: #000 1px solid; padding:4px 9px;color: #fff; background-color: #31363c;}
+.pageg .current {font-family: Arial;border: #000 1px solid; font-size: 13px; padding:5px 9px; color: #fff;margin: 2px;  background-color: #31363c}
+
+/*fix-bottom*/
+.ts-bottom-fix {font-family:'Microsoft YaHei';
+  	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	z-index: 99;
+}
+
+
+.ts-bottom-fix {
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+background:linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background-size: 400% 400%;
+	animation: gradientBG 15s ease infinite;
+}
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.ts-bottom-fix .ts-inner-wrap {border-top:1px solid #fff;font-size:12px;height:4.3em;width:100%;margin:0 auto;}
+.ts-bottom-fix ul {position:relative;height:100%;}
+.ts-bottom-fix ul li {float:left;text-align:center;font-size:1.125em;width:20%;height:100%;}
+.ts-bottom-fix ul li a {display:block;width:100%;height:100%;}
+.ts-bottom-fix ul li i {display:block;}
+.ts-bottom-fix ul li.normal {margin:0em auto;width:20%;}
+.ts-bottom-fix ul li.normal i {width:2em;height:1.5em;margin:0.5em auto 0.2em;position:relative;font-style:normal;}
+.ts-bottom-fix ul li.normal i b {display:block;width:1em;height:1em;text-align:center;line-height:1em;font-weight:normal;color:#fff;font-size:0.8em;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;position:absolute;top:-0.2em;right:-0.3em;}
+
+.ts-bottom-fix ul li.normal i.ind {background:url(../php-asp/img/foot_icon1.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal i.show {background:url(../php-asp/img/foot_icon2.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal i.Fphp-asp {background:url(../php-asp/img/foot_icon3.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal i.shop {background:url(../php-asp/img/foot_icon4.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal i.php-asp5 {background:url(../php-asp/img/foot_icon5.png) center center no-repeat;background-size:1.9em auto;}
+
+.ts-bottom-fix ul li.normal span {color:#fff;font-style:normal;}
+.ts-bottom-fix ul li.normal a.cur span,.ts-bottom-fix ul li.normal a:hover span {color:#e30a10;}
+
+
+.ts-bottom-fix ul li.normal a.cur i.ind,.ts-bottom-fix ul li.normal a:hover i.ind 
+{background:url(../php-asp/img/foot_hicon1.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal a.cur i.show,.ts-bottom-fix ul li.normal a:hover i.show 
+{background:url(../php-asp/img/foot_hicon2.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal a.cur i.Fphp-asp,.ts-bottom-fix ul li.normal a:hover i.Fphp-asp 
+{background:url(../php-asp/img/foot_hicon3.png) center center no-repeat;background-size:1.9em auto;}
+.ts-bottom-fix ul li.normal a.cur i.shop,.ts-bottom-fix ul li.normal a:hover i.shop 
+{background:url(../php-asp/img/foot_hicon4.png) center center no-repeat;background-size:1.9em auto;}
+
+.ts-bottom-fix ul li.normal a.cur i.php-asp5,.ts-bottom-fix ul li.normal a:hover i.php-asp5 
+{background:url(../php-asp/img/foot_hicon5.png) center center no-repeat;background-size:1.9em auto;}
+
+.ts-bottom-fix ul li.normal:hover {background:#212121;}
+
+
+
+
+
+/*大屏幕*/
+@media screen and (min-width: 769px) {
+body{font-size:14px;}
+/*php-asp.net定时广告弹窗*/
+.ts-wrap{ min-width: 310px; max-width: 650px; margin: 0 auto;box-shadow: 5px 0px 15px -5px black, -5px 0px 15px -5px black;background:#fff;}
+
+ .cate-item .div-img{width:150px;height: 150px;}
+ .page.unselect{background:url(../php-asp/img/bg.jpg) no-repeat center center;background-size:cover;background-attachment:fixed;
+	min-height:100%;font-family:"microsoft yahei";}
+	
+.page.unselect2{background:url(../php-asp/img/bg2.jpg) no-repeat center center;background-size:cover;background-attachment:fixed;
+	min-height:100%;font-family:"microsoft yahei";}
+	
+.page.unselect3{background:url(../php-asp/img/bg3.jpg) no-repeat center center;background-size:cover;background-attachment:fixed;
+	min-height:100%;font-family:"microsoft yahei";}
+	
+	.pagg{text-align: center;height:450px;padding-top: 30px; }
+.pagg a {display: inline-block; font-family: Arial; font-size: 13px; border: #dbdbdb 1px solid; padding:4px 9px; margin: 2px; margin-bottom: 5px; color: #31363c; text-decoration: none}
+.pagg a:hover,.pagg a:focus{font-family: Arial;font-size: 13px;border: #000 1px solid; padding:4px 9px;color: #fff; background-color: #31363c;}
+.pagg .current {font-family: Arial;border: #000 1px solid; font-size: 13px; padding:5px 9px; color: #fff;margin: 2px;  background-color: #31363c}
+	
+	
+}
+
+/*小屏幕*/
+@media screen and (max-width: 768px) {
+body{font-size:12px;}
+.aui-palace-grid {font-size:12px;}
+
+.cate-item .div-img{width:72px;height: 72px;}
+ .page.unselect{background-color: #fff;font-family:"microsoft yahei";}
+  .page.unselect2{background-color: #fff;font-family:"microsoft yahei";}
+  .page.unselect3{background-color: #fff;font-family:"microsoft yahei";}
+ 
+ .pagg{text-align: center;height:450px;padding-top: 30px; }
+.pagg a {display: inline-block; font-family: Arial; font-size: 13px; border: #dbdbdb 1px solid; padding:4px 9px; margin: 2px; margin-bottom: 5px; color: #31363c; text-decoration: none}
+.pagg a:hover,.pagg a:focus{font-family: Arial;font-size: 13px;border: #000 1px solid; padding:4px 9px;color: #fff; background-color: #31363c;}
+.pagg .current {font-family: Arial;border: #000 1px solid; font-size: 13px; padding:5px 9px; color: #fff;margin: 2px;  background-color: #31363c}
+	
+  
+  }   
+
+@media screen and (max-width: 767px) {
+     .copyright_p{ display:none;}
+}

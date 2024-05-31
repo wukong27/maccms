@@ -1,0 +1,90 @@
+<div class="social-link-area ptb-40 dark-blue-bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 fix col-xs-12 col-sm-6">
+                                <div class="footer-logo pull-left">
+                                    <a href="index.html" class="block"><img src="{$maccms.path_tpl}images/logo/footer-logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 fix col-xs-12 col-sm-6">
+                                <div class="social-links pull-right">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of Social Link Area--> 
+                <!--Start of Footer Widget-area-->
+                <div class="footer-widget-area black-bg pt-120 pb-110">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4">
+                                <div class="single-footer-widget">
+                                    <h3 class="text-white mb-22">About Us</h3>
+                                    <p class="text-white pr-10">本站提供全网小说TXT收集与下载，本站只提供收集，不提供存储服务，如有冒犯倒您的版权请联系我们！我们见第一时间对维权小说进行处理！</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4">
+                                <div class="single-footer-widget">
+                                    <h3 class="text-white mb-26">GET IN TOUCH</h3>
+                                    <span class="text-white mb-9"><i class="fa fa-phone"></i>{$maccms.site_qq}</span>
+                                    <span class="text-white mb-9"><i class="fa fa-envelope"></i>{$maccms.site_email}</span>
+                                    <span class="text-white mb-9"><i class="fa fa-globe"></i>{$maccms.site_url}</span>
+                                    <span class="text-white mb-9"><i class="fa fa-map-marker"></i>{$maccms.site_name}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4">
+                                <div class="single-footer-widget">
+                                    <h3 class="text-white mb-21">Helpful Links</h3>
+                                    <ul class="footer-list">
+                                        {maccms:type ids="1,2,3,4,5" order="desc" by="sort"}
+                                        <li><a href="{:mac_url_type($vo)}">{$vo.type_name}</a></li>
+                                        {/maccms:type}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-3 hidden-sm">
+                                <div class="single-footer-widget">
+                                    <h3 class="text-white mb-21">：</h3>
+                                    <ul class="footer-list">
+									{maccms:vod num="5" level="1,2,3,4,5,6,7,8,9" order="desc" by="time"}
+                                        <li><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></li>
+                                     {/maccms:vod}   
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of Footer Widget-area-->
+                <!-- Start of Footer area -->
+                <footer class="footer-area blue-bg text-center ptb-20">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="footer-text">
+                                    Copyright &copy; 2020.Company name All rights reserved.<a target="_blank" href="https://www.vpnpn.com/">微天涯</a> {$maccms.site_tj}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer area -->
+            </div>   
+            <!--End of Bg White--> 
+        </div>    
+       
+        
+        <script src="{$maccms.path_tpl}js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="{$maccms.path_tpl}js/bootstrap.min.js"></script>
+        <script src="{$maccms.path_tpl}js/owl.carousel.min.js"></script>
+        <script src="{$maccms.path_tpl}lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
+		<script src="{$maccms.path_tpl}lib/nivo-slider/home.js" type="text/javascript"></script>
+        <script src="{$maccms.path_tpl}js/plugins.js"></script>
+        <script src="{$maccms.path_tpl}js/jquery.mb.YTPlayer.js"></script>
+        <script src="{$maccms.path_tpl}js/jquery.ajaxchimp.min.js"></script>
+        <script src="{$maccms.path_tpl}js/styleswitch.js"></script>
+        <script src="{$maccms.path_tpl}js/waypoints.min.js"></script>
+		<script src="{$maccms.path_tpl}js/main.js"></script>

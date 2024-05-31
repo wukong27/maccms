@@ -1,0 +1,33 @@
+<div class="ts-wrap">
+<div class="Utop"><a href="http://{$maccms.site_url}"><img style="width:100%" alt="{$maccms.site_name}" src="/{$maccms.site_logo}" /></a>
+
+
+<div class="aui-php aui-palace-three">
+        <a href="/" class="aui-palace-grid aui-asp">视频</a>{maccms:type ids="parent" order="asc" by="sort" flag="vod"}
+		<a href="{:mac_url_type($vo)}" class="aui-palace-grid aui-phpasp">{$vo.type_name}</a>{/maccms:type}
+		</div> 
+		
+		
+<div class="aui-php aui-palace-three">
+        <a href="/" class="aui-palace-grid aui-asp">套图</a>
+        {maccms:type ids="child" order="asc" by="sort" flag="art"}{if condition="$vo.type_pid eq 20"}
+		<a href="{:mac_url_type($vo)}" class="aui-palace-grid aui-phpasp">{$vo.type_name}</a>{/if}{/maccms:type}
+		</div> 		
+
+<div class="aui-php aui-palace-three">
+        <a href="/" class="aui-palace-grid aui-asp">小说</a>
+        {maccms:type ids="child" order="asc" by="sort" flag="art"}{if condition="$vo.type_pid eq 21"}
+		<a href="{:mac_url_type($vo)}" class="aui-palace-grid aui-phpasp">{$vo.type_name}</a>{/if}{/maccms:type}
+		</div>
+		
+
+
+<div class="cate-section">				
+{maccms:topic order="desc" by="level" num="4" paging="false" ids="all"}
+<a href="{:mac_url_topic_detail($vo)}" class="cate-item">
+                    		<div class="div-img"><div style="background-position: 0% 0%;width: 100%;height: 100%;border-radius: 100%; background-size: 100% 100%; background-repeat: no-repeat; background-image: url(/{$vo.topic_pic}"></div></div>
+                    		<div class="div-tit"><span>{$vo.topic_name}</span></div></a>{/maccms:topic}
+							
+<input type="hidden" value="1" name='uid'></div>
+</div>
+</div>

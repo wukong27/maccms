@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>搜索 - {$maccms.site_name}</title>
+	{include file="p/ina"}
+</head>
+
+<body class="">
+
+<div class="page-wrapper">
+ 	
+    <!-- Preloader -->
+    <div class="preloader"></div>
+ 	
+    <!-- Main Header-->
+    <header class="main-header">
+{include file="p/h"}	
+    </header>
+    <!--End Main Header -->
+	
+	<!-- Course Detail Section -->
+<footer class="main-footer">
+		<!-- Pattern Layer -->
+		
+
+		<div class="upper-box">
+			<div class="auto-container">
+				<h4>[{$maccms.site_name}]搜索</h4>   
+				
+				<div class="subscribe-form">
+					<form method="post" name="search" action="{:mac_url('vod/search')}">
+						<div class="form-group clearfix">
+							<span class="icon flaticon-mail"></span>
+							<input type="text" name="wd" value="{$param.wd}" placeholder="请输入您要找的内容" required="">
+							<button type="submit" class="theme-btn btn-style-one"><span class="txt">搜一下</span></button>
+						</div>
+					</form>
+				</div>
+				
+				
+			<div class="footer-bottom text-center">
+				<div class="copyright">热搜：
+			{maccms:foreach name=":explode(',',$maccms.search_hot)" id="vo2" key="key2"}
+            <a href="{:mac_url('vod/search',['wd'=>$vo2])}">{$vo2}</a>
+            {/maccms:foreach}</div>
+			</div>
+			
+			
+			</div>
+		</div>
+		
+		<div class="auto-container">
+		
+        	<!-- Widgets Section -->
+            <div class="widgets-section">
+            	<div class="row clearfix">
+                	
+                    
+					
+				</div>
+			</div>
+			
+			<!-- Footer Bottom -->
+			
+			
+		</div>
+	</footer>
+	<!-- End Instructor Page Section -->
+	
+	<!-- Main Footer -->
+    <footer class="main-footer">
+	{include file="p/fa"}
+	</footer>
+	
+</div>
+<!-- End pagewrapper -->
+
+<!-- Sidebar Nav -->
+<div class="sidenav-list">
+	<ul class="navbar">
+	{include file="p/ha"}
+	</ul>
+</div>
+<!-- End Sidebar Nav -->
+
+<!-- Hidden Navigation Bar -->
+<section class="hidden-bar left-align">
+	<div class="color-layer"></div>
+	<div class="hidden-bar-closer">
+		<span class="flaticon-multiply"></span>
+	</div>
+	<!-- Hidden Bar Wrapper -->
+	<div class="hidden-bar-wrapper">
+	{include file="p/hb"}
+	</div>
+	<!--Copyright Text-->
+	
+</section>
+
+<!--Scroll to top-->
+{include file="p/inb"}
+
+</body>
+</html>

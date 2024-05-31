@@ -1,0 +1,9 @@
+
+		<li><a href="/"><i class="icon flaticon-home"></i> <span><i class="flaticon-home"></i> Home</span></a></li>
+{maccms:type ids="" order="asc" num="100" by="sort" id="vo1" key="key1"}
+{if condition="$key1 lt 3"}
+		<li><a href="{:mac_url_type($vo1)}"><i class="icon flaticon-book"></i> <span><i class="flaticon-book"></i>{$vo1.type_name}</span></a></li>
+		
+		
+{/if}
+{/maccms:type}	

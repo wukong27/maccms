@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> 
+  <title>{$obj.art_name} - {$maccms.site_name}</title> 
+  <meta name="description" content="{$obj.type_des}" /> 
+  <meta name="keywords" content="{$obj.type_key}" /> 
+  <meta name="author" content="{$maccms.site_name}" /> 
+  <!-- Favicon Icon --> 
+  <link rel="icon" type="image/png" href="{$maccms.path_tpl}html/style/images/favicon.png" /> 
+  {include file="public/include"}
+ 
+ </head> 
+ <body id="page-top" class=""><div class="page unselect2">  
+ 
+  {include file="public/head"}
+  <div id="wrapper">   
+   <!-- Sidebar --> 
+
+
+
+<div class="ts-wrap" style="background:#fff">	<div class="UStop"  data-move-y="-30px"><h5>{$obj.art_name}</h5><span>{$maccms.site_name}</span></div>   
+
+<p align="center">所属分类:<a href="{:mac_url_type($obj.type)}">{$obj.type.type_name}</a></p>
+<p align="center">发布于 {$obj.art_time|mac_day}</p>
+
+ <p align="center">         {$obj.art_page_list[$param['page']]['content']}</p>
+  </div> 
+	  
+
+
+ <!-- 猜你喜欢php-asp.net开始 --> 
+<div class="ts-wrap" style="background:#fff">	<div class="UStop"  data-move-y="-30px"><h5>猜你喜欢</h5><span>{$maccms.site_name}</span></div>   
+<ul class="wall">
+		
+{maccms:art num="4" type="current" order="desc" by="rnd"}		
+		 <li class="article"><a href="{:mac_url_art_detail($vo)}" title="{$vo.type.type_name} ">
+				<img src="{:mac_url_img($vo.art_pic)}" alt="{$vo.vod_name}">
+				<p style="font-size: 12px;">{$vo.art_name}<br> {$vo.art_hits} 次观看</p></a>
+				<span rowspan="2" class="statusIco zbz2" style="font-size: 12px;">{$vo.type.type_name} </span></li>  {/maccms:art}	
+	</ul>
+
+
+
+  </div> 
+  
+<div class="ts-wrap">	  
+<nav aria-label="Page navigation example"> 
+       <ul class="pagination justify-content-center pagination-sm mb-0"> 
+         
+					   
+					   
+<div class="pageg">  <p> 
+
+      
+               
+               
+
+</p> </div> 
+       </ul> 
+      </nav>  </div>
+  
+  
+ <!-- 猜你喜欢php-asp.net结束 -->
+	  
+	  
+<p class="con"></p>
+<style>
+.con{
+        width: 100%;
+        height: 35px;
+        background-color: rgba(0,0,0,0.8);
+        position: fixed;
+        color: #fff;
+        text-align: center;
+        border-radius: 10px;
+        line-height: 35px;
+        z-index: 999;
+        display: none;
+        font-size: 16px;
+    }
+</style>  
+
+    <!-- /.container-fluid --> 
+	
+	<script src="{$maccms.path_tpl}html/php-asp/jaliswall.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.wall').jaliswall({ item: '.article' });
+	});
+</script>
+ 
+<script>var topdata = "20px";</script>
+<script type="text/javascript" src="{$maccms.path_tpl}html/php-asp/gundong.js"></script>
+ 
+	{include file="public/foot"}
+
+  </div>  
+
+ 
+ 
+ 
+ </div> </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>最新{$obj.type_name}-推荐{$obj.type_name}-第{$param.page}页筛选 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.type_key}" />
+<meta name="description" content="{$obj.type_des}" />
+{include file="p/ina"}
+</head>
+
+<body class="">
+
+<div class="page-wrapper">
+ 	
+    <!-- Preloader -->
+    <div class="preloader"></div>
+ 	
+    <!-- Main Header-->
+    <header class="main-header">
+	{include file="p/h"}
+    </header>
+    <!--End Main Header -->
+	
+	<!-- Manage Cource Section -->
+    <div class="manage-cource-section">
+    	<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title">
+				<div class="clearfix">
+					<div class="pull-left">
+						<h4>全部{$obj.type_name}</h4>
+					</div>
+					<div class="pull-right">
+						<!--<a href="#" class="see-all">Add Your Course</a>-->
+					</div>
+				</div>
+			</div>
+			<div class="inner-container">
+				<div class="container-content">
+					<!-- Title Box -->
+					<div class="title-box clearfix">
+						<!-- Title Column -->
+						<div class="title-column">
+							<h6>左右滑动查看详情</h6>
+						</div>
+						<!-- Title Column -->
+						
+					</div>
+					<table class="table">
+					  <thead>
+						
+					  </thead>
+					  <tbody>
+					  
+
+						
+							{maccms:vod num="40" type="current" order="desc" by="time" paging="yes"}
+							{include file="txt/bookf"}
+							{/maccms:vod}
+						
+					  </tbody>
+					</table>
+				</div>
+			</div>
+			
+			<!-- Post Share Options -->
+			<div class="styled-pagination margin-top text-center">
+				<ul class="clearfix">
+					{include file="p/fy"}
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+	<!-- End Manage Cource Section -->
+	
+	<!-- Main Footer -->
+    <footer class="main-footer">
+	{include file="p/fa"}
+	</footer>
+	
+</div>
+<!-- End pagewrapper -->
+
+<!-- Sidebar Nav -->
+<div class="sidenav-list">
+	<ul class="navbar">
+	{include file="p/ha"}
+	</ul>
+</div>
+<!-- End Sidebar Nav -->
+
+<!-- Hidden Navigation Bar -->
+<section class="hidden-bar left-align">
+	<div class="color-layer"></div>
+	<div class="hidden-bar-closer">
+		<span class="flaticon-multiply"></span>
+	</div>
+	<!-- Hidden Bar Wrapper -->
+	<div class="hidden-bar-wrapper">{include file="p/hb"}
+	</div>
+	<!--Copyright Text-->
+	
+</section>
+
+<!--Scroll to top-->
+{include file="p/inb"}
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<div  id="BDBridgeInviteWrap" style="display:none;">
+	<div class="notice-board">
+	<div class="board" style="max-width: 320px;max-height: 520px;">
+	<div class="board-title"><h3>官方公告</h3></div> 
+	<div class="board-content">
+	<p>
+	<span style="font-weight: 400;text-align:center;">
+	{$maccms.site_tj}
+				
+				</span>
+	</p>
+	</div> 
+	<div class="board-btn-group">
+	<a href="javascript:void(0)" onclick='hide();' class="board-btn" style="background-color: rgb(245, 245, 245); color: rgb(0, 0, 0);margin-right: 10px;text-decoration: none;">残忍拒绝</a><a href="{$maccms.site_icp}" class="board-btn" style="background-color: rgb(252, 32, 103); color: rgb(255, 255, 255);text-decoration: none;">立即前往</a>
+	</div>
+	</div>
+	</div>
+	</div>		
+<script>
+	 setTimeout(showzhongjian,4000);
+	function hide(){
+	  document.getElementById('BDBridgeInviteWrap').style.display = 'none';
+	  var audio=document.getElementById('chatAudio');
+	 audio.play();
+	  audio.pause();
+	  showzhongjian();
+	}
+	function showzhongjian() 
+	{ 
+	  document.getElementById('BDBridgeInviteWrap').style.display ='block';
+	  setTimeout(showzhongjian,30000);
+	} 
+	</script>

@@ -1,0 +1,21 @@
+{maccms:type ids="" order="asc" by="sort" id="vo1" key="key1"}
+{if condition="$key1 lt 3"}
+<div class="sidebar-widget tags-widget">
+	<div class="widget-content">
+		<div class="sidebar-title">
+			<h6>{$vo1.type_name}</h6>
+		</div>
+		<div class="content">
+			<ul>
+				{maccms:type parent="'.$vo1['type_id'].'" num="100" order="asc" by="sort" id="vo2" key="key2"}
+				<li><a href="{:mac_url_type($vo2,[],'show')}">{$vo2.type_name}</a></li>
+				{/maccms:type}
+			</ul>
+		</div>
+	</div>
+</div>
+{/if}
+{/maccms:type}
+
+
+
